@@ -1,0 +1,20 @@
+.purple{
+    color: purple
+}
+
+.yellow {
+    color: yellow
+}
+
+.section{
+    background-image: url("https://westudy.com.br/wp-content/uploads/2023/07/pablo-heimplatz-ZODcBkEohk8-unsplash-scaled.jpg");
+    background-repeat: no-repeat;
+    background-size: 100vw;
+    background-position: bottom;
+    position: relative;
+    padding: 20px;
+}
+
+.section img{
+    width: 100%;
+}
