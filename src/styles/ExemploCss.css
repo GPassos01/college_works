@@ -1,0 +1,84 @@
+#rcorners1 {
+    border-radius: 25px;
+    background: #73AD21;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
+  }
+  
+  #rcorners2 {
+    border-radius: 25px;
+    border: 2px solid #73AD21;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
+  }
+  
+  #rcorners3 {
+    border-radius: 25px;
+    background: url(../assets/paper.jpeg);
+    background-position: left top;
+    background-repeat: repeat;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
+  }
+
+
+
+  .box_2d {
+    width: 200px;
+    height: 200px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    line-height: 200px;
+    transition: transform 0.3s ease;
+  }
+  .box_2d:hover {
+    transform: rotate(45deg);
+  }  
+
+  .box_3d {
+    width: 200px;
+    height: 200px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    line-height: 200px;
+    transition: transform 0.5s ease;
+    transform-style: preserve-3d; /* Ensure that child elements preserve their 3D position */
+    display: inline-block; /* Display boxes in a row */
+    margin: 20px; /* Add some spacing between boxes */
+  }
+  .box_3d:hover {
+    transform: rotateY(180deg); /* Rotate around the Y-axis by 180 degrees */
+  }  
+
+
+  .box_t {
+    width: 200px;
+    height: 200px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    line-height: 200px;
+    transition: transform 0.5s ease;
+  }
+  .box_t:hover {
+    transform: translate(50px, 50px); /* Move 50 pixels to the right and 50 pixels down */
+  }  
+
+
+  .box_nc {
+    width: 200px;
+    height: 200px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    line-height: 200px;
+    transition: transform 0.5s ease;
+  }
+  .box_nc:hover {
+    transform: scale(1.2) rotate(45deg) translate(50px, 50px); /* Scale, rotate, and translate */
+  }
