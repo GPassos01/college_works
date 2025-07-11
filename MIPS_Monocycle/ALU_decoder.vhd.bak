@@ -1,0 +1,52 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+-- ============================================================================
+-- Módulo: main_decoder
+-- Descrição:
+--   
+-- ============================================================================
+entity ALU_decoder is
+    Port (
+			OP     		: in  STD_LOGIC_VECTOR(5 downto 0);  -- Entrada OPcode de 6 bits
+			MemtoReg		: out	STD_LOGIC;
+			MemWrite		: out	STD_LOGIC;
+			Branch		: out	STD_LOGIC;
+			ALUOp			: out	STD_LOGIC_VECTOR(1..0);
+			ALUSrc		: out	STD_LOGIC;
+			RegDst		: out	STD_LOGIC;
+			RegWrite		: out	STD_LOGIC	  
+    ); 
+end ALU_decoder;
+
+architecture rtl of ALU_decoder is
+begin
+    process(OP, FUNCT)
+    begin
+			case OP is
+            -- Operação de soma: A_int + B_int
+            when "010" =>
+                Resultado_int <= A_int + B_int;
+
+            -- Operação de subtração: A_int - B_int
+            when "110" =>
+                Resultado_int <= A_int - B_int;
+
+            -- Operação lógica AND: bit a bit entre A_int e B_int
+            when "000" =>
+                Resultado_int <= A_int and B_int;
+
+            -- Operação lógica OR: bit a bit entre A_int e B_int
+            when "001" =>
+                Resultado_int <= A_int or B_int;
+            
+            when "100" => 
+                Resultado_int <= A_int and (not B_int);
+               
+            when "101" =>
+                Resultado_int <= A_int or (not B_int);
+        -- Deslocamento à esquerda de 2 bits (shifting left)
+        C <= A(29 downto 0) & "00";  -- A(29 downto 0) pega os 30 bits mais à esquerda de A e concatena com "00"
+    end process;
+end rtl;
