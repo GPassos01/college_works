@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">SmartAssebility</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Bem-vindo, %1$s!</string>
+    <string name="scan_instruction">Procurando dispositivos próximos...</string>
+    <string name="no_devices">Nenhum dispositivo encontrado</string>
+    <string name="start_scan">Iniciar Busca</string>
+    <string name="stop_scan">Parar Busca</string>
+</resources>
