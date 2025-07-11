@@ -1,0 +1,30 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+-- ============================================================================
+-- Módulo: mux32
+-- Descrição:
+--   Multiplexador de 2 entradas de 32 bits com 1 sinal de controle.
+--   Seleciona A se Ctrl = '1', ou B se Ctrl = '0'.
+-- ============================================================================
+entity mux32 is
+    Port (
+        A     : in  STD_LOGIC_VECTOR(31 downto 0);  -- Entrada A de 32 bits
+        B     : in  STD_LOGIC_VECTOR(31 downto 0);  -- Entrada B de 32 bits
+        Ctrl  : in  STD_LOGIC;                      -- Sinal de controle (1 bit)
+        C     : out STD_LOGIC_VECTOR(31 downto 0)   -- Saída de 32 bits
+    );
+end mux32;
+
+architecture rtl of mux32 is
+begin
+    process(A, B, Ctrl)
+    begin
+        if Ctrl = '0' then
+            C <= A;
+        else
+            C <= B;
+        end if;
+    end process;
+end rtl;

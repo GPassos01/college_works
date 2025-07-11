@@ -1,0 +1,30 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+-- ============================================================================
+-- Módulo: mux5
+-- Descrição:
+--   Multiplexador de 2 entradas de 5 bits com 1 sinal de controle.
+--   Seleciona A se Ctrl = '1', ou B se Ctrl = '0'.
+-- ============================================================================
+entity mux5 is
+    Port (
+        A     : in  STD_LOGIC_VECTOR(4 downto 0);  -- Entrada A de 5 bits
+        B     : in  STD_LOGIC_VECTOR(4 downto 0);  -- Entrada B de 5 bits
+        Ctrl  : in  STD_LOGIC;                      -- Sinal de controle (1 bit)
+        C     : out STD_LOGIC_VECTOR(4 downto 0)   -- Saída de 5 bits
+    );
+end mux5;
+
+architecture rtl of mux5 is
+begin
+    process(A, B, Ctrl)
+    begin
+        if Ctrl = '1' then
+            C <= A;
+        else
+            C <= B;
+        end if;
+    end process;
+end rtl;

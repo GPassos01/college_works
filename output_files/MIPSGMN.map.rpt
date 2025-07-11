@@ -1,0 +1,1728 @@
+Analysis & Synthesis report for MIPSGMN
+Wed Apr 23 00:11:18 2025
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Registers Packed Into Inferred Megafunctions
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Source assignments for data_memory:inst34|altsyncram:mem_rtl_0|altsyncram_fg81:auto_generated
+ 14. Parameter Settings for Inferred Entity Instance: data_memory:inst34|altsyncram:mem_rtl_0
+ 15. altsyncram Parameter Settings by Entity Instance
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Apr 23 00:11:18 2025           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; MIPSGMN                                         ;
+; Top-level Entity Name              ; MIPSGMN                                         ;
+; Family                             ; Cyclone IV E                                    ;
+; Total logic elements               ; 148                                             ;
+;     Total combinational functions  ; 148                                             ;
+;     Dedicated logic registers      ; 40                                              ;
+; Total registers                    ; 40                                              ;
+; Total pins                         ; 163                                             ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                                      ; MIPSGMN            ; MIPSGMN            ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 16     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                        ;
++----------------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path             ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                               ; Library ;
++----------------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------+---------+
+; control_unit.bdf                             ; yes             ; User Block Diagram/Schematic File                     ; D:/altera/Projects/MIPSGNM_v1/control_unit.bdf                             ;         ;
+; ula.vhd                                      ; yes             ; User VHDL File                                        ; D:/altera/Projects/MIPSGNM_v1/ula.vhd                                      ;         ;
+; somador.vhd                                  ; yes             ; User VHDL File                                        ; D:/altera/Projects/MIPSGNM_v1/somador.vhd                                  ;         ;
+; sll2.vhd                                     ; yes             ; User VHDL File                                        ; D:/altera/Projects/MIPSGNM_v1/sll2.vhd                                     ;         ;
+; sign_extend.vhd                              ; yes             ; User VHDL File                                        ; D:/altera/Projects/MIPSGNM_v1/sign_extend.vhd                              ;         ;
+; register_file.vhd                            ; yes             ; User VHDL File                                        ; D:/altera/Projects/MIPSGNM_v1/register_file.vhd                            ;         ;
+; program_counter.vhd                          ; yes             ; User VHDL File                                        ; D:/altera/Projects/MIPSGNM_v1/program_counter.vhd                          ;         ;
+; mux5.vhd                                     ; yes             ; User VHDL File                                        ; D:/altera/Projects/MIPSGNM_v1/mux5.vhd                                     ;         ;
+; mux32.vhd                                    ; yes             ; User VHDL File                                        ; D:/altera/Projects/MIPSGNM_v1/mux32.vhd                                    ;         ;
+; main_decoder.vhd                             ; yes             ; User VHDL File                                        ; D:/altera/Projects/MIPSGNM_v1/main_decoder.vhd                             ;         ;
+; inst_memory.vhd                              ; yes             ; User VHDL File                                        ; D:/altera/Projects/MIPSGNM_v1/inst_memory.vhd                              ;         ;
+; data_memory.vhd                              ; yes             ; User VHDL File                                        ; D:/altera/Projects/MIPSGNM_v1/data_memory.vhd                              ;         ;
+; const4.vhd                                   ; yes             ; User VHDL File                                        ; D:/altera/Projects/MIPSGNM_v1/const4.vhd                                   ;         ;
+; ALU_decoder.vhd                              ; yes             ; User VHDL File                                        ; D:/altera/Projects/MIPSGNM_v1/ALU_decoder.vhd                              ;         ;
+; MIPSGMN.bdf                                  ; yes             ; User Block Diagram/Schematic File                     ; D:/altera/Projects/MIPSGNM_v1/MIPSGMN.bdf                                  ;         ;
+; sll2_j.vhd                                   ; yes             ; User VHDL File                                        ; D:/altera/Projects/MIPSGNM_v1/sll2_j.vhd                                   ;         ;
+; concat_4_28.vhd                              ; yes             ; User VHDL File                                        ; D:/altera/Projects/MIPSGNM_v1/concat_4_28.vhd                              ;         ;
+; altsyncram.tdf                               ; yes             ; Megafunction                                          ; d:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram.tdf           ;         ;
+; stratix_ram_block.inc                        ; yes             ; Megafunction                                          ; d:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_ram_block.inc    ;         ;
+; lpm_mux.inc                                  ; yes             ; Megafunction                                          ; d:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mux.inc              ;         ;
+; lpm_decode.inc                               ; yes             ; Megafunction                                          ; d:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_decode.inc           ;         ;
+; aglobal130.inc                               ; yes             ; Megafunction                                          ; d:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc           ;         ;
+; a_rdenreg.inc                                ; yes             ; Megafunction                                          ; d:/altera/13.0sp1/quartus/libraries/megafunctions/a_rdenreg.inc            ;         ;
+; altrom.inc                                   ; yes             ; Megafunction                                          ; d:/altera/13.0sp1/quartus/libraries/megafunctions/altrom.inc               ;         ;
+; altram.inc                                   ; yes             ; Megafunction                                          ; d:/altera/13.0sp1/quartus/libraries/megafunctions/altram.inc               ;         ;
+; altdpram.inc                                 ; yes             ; Megafunction                                          ; d:/altera/13.0sp1/quartus/libraries/megafunctions/altdpram.inc             ;         ;
+; db/altsyncram_fg81.tdf                       ; yes             ; Auto-Generated Megafunction                           ; D:/altera/Projects/MIPSGNM_v1/db/altsyncram_fg81.tdf                       ;         ;
+; db/mipsgmn.ram0_data_memory_8ae84398.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; D:/altera/Projects/MIPSGNM_v1/db/mipsgmn.ram0_data_memory_8ae84398.hdl.mif ;         ;
++----------------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                    ;
++---------------------------------------------+----------------------------------+
+; Resource                                    ; Usage                            ;
++---------------------------------------------+----------------------------------+
+; Estimated Total logic elements              ; 148                              ;
+;                                             ;                                  ;
+; Total combinational functions               ; 148                              ;
+; Logic element usage by number of LUT inputs ;                                  ;
+;     -- 4 input functions                    ; 42                               ;
+;     -- 3 input functions                    ; 33                               ;
+;     -- <=2 input functions                  ; 73                               ;
+;                                             ;                                  ;
+; Logic elements by mode                      ;                                  ;
+;     -- normal mode                          ; 110                              ;
+;     -- arithmetic mode                      ; 38                               ;
+;                                             ;                                  ;
+; Total registers                             ; 40                               ;
+;     -- Dedicated logic registers            ; 40                               ;
+;     -- I/O registers                        ; 0                                ;
+;                                             ;                                  ;
+; I/O pins                                    ; 163                              ;
+; Embedded Multiplier 9-bit elements          ; 0                                ;
+; Maximum fan-out node                        ; program_counter:inst19|PC_reg[3] ;
+; Maximum fan-out                             ; 40                               ;
+; Total fan-out                               ; 817                              ;
+; Average fan-out                             ; 1.50                             ;
++---------------------------------------------+----------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                     ;
++-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------+--------------+
+; Compilation Hierarchy Node  ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                            ; Library Name ;
++-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------+--------------+
+; |MIPSGMN                    ; 148 (0)           ; 40 (0)       ; 0           ; 0            ; 0       ; 0         ; 163  ; 0            ; |MIPSGMN                                       ; work         ;
+;    |ULA:inst4|              ; 64 (64)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPSGMN|ULA:inst4                             ; work         ;
+;    |control_unit:inst30|    ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPSGMN|control_unit:inst30                   ; work         ;
+;       |ALU_decoder:inst2|   ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPSGMN|control_unit:inst30|ALU_decoder:inst2 ; work         ;
+;    |inst_memory:inst16|     ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPSGMN|inst_memory:inst16                    ; work         ;
+;    |mux32:inst2|            ; 33 (33)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPSGMN|mux32:inst2                           ; work         ;
+;    |mux32:inst7|            ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPSGMN|mux32:inst7                           ; work         ;
+;    |program_counter:inst19| ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPSGMN|program_counter:inst19                ; work         ;
+;    |register_file:inst|     ; 33 (33)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPSGMN|register_file:inst                    ; work         ;
+;    |somador:inst10|         ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPSGMN|somador:inst10                        ; work         ;
++-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                      ;
++------------------------------------------+----------------------------------------------+
+; Register name                            ; Reason for Removal                           ;
++------------------------------------------+----------------------------------------------+
+; program_counter:inst19|PC_reg[1]         ; Merged with program_counter:inst19|PC_reg[0] ;
+; program_counter:inst19|PC_reg[0]         ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~166     ; Lost fanout                                  ;
+; register_file:inst|registradores~167     ; Lost fanout                                  ;
+; register_file:inst|registradores~168     ; Lost fanout                                  ;
+; register_file:inst|registradores~169     ; Lost fanout                                  ;
+; register_file:inst|registradores~170     ; Lost fanout                                  ;
+; register_file:inst|registradores~171     ; Lost fanout                                  ;
+; register_file:inst|registradores~172     ; Lost fanout                                  ;
+; register_file:inst|registradores~173     ; Lost fanout                                  ;
+; register_file:inst|registradores~174     ; Lost fanout                                  ;
+; register_file:inst|registradores~175     ; Lost fanout                                  ;
+; register_file:inst|registradores~176     ; Lost fanout                                  ;
+; register_file:inst|registradores~177     ; Lost fanout                                  ;
+; register_file:inst|registradores~178     ; Lost fanout                                  ;
+; register_file:inst|registradores~179     ; Lost fanout                                  ;
+; register_file:inst|registradores~180     ; Lost fanout                                  ;
+; register_file:inst|registradores~181     ; Lost fanout                                  ;
+; register_file:inst|registradores~182     ; Lost fanout                                  ;
+; register_file:inst|registradores~183     ; Lost fanout                                  ;
+; register_file:inst|registradores~184     ; Lost fanout                                  ;
+; register_file:inst|registradores~185     ; Lost fanout                                  ;
+; register_file:inst|registradores~186     ; Lost fanout                                  ;
+; register_file:inst|registradores~187     ; Lost fanout                                  ;
+; register_file:inst|registradores~188     ; Lost fanout                                  ;
+; register_file:inst|registradores~189     ; Lost fanout                                  ;
+; register_file:inst|registradores~190     ; Lost fanout                                  ;
+; register_file:inst|registradores~191     ; Lost fanout                                  ;
+; register_file:inst|registradores~192     ; Lost fanout                                  ;
+; register_file:inst|registradores~193     ; Lost fanout                                  ;
+; register_file:inst|registradores~194     ; Lost fanout                                  ;
+; register_file:inst|registradores~195     ; Lost fanout                                  ;
+; register_file:inst|registradores~196     ; Lost fanout                                  ;
+; register_file:inst|registradores~197     ; Lost fanout                                  ;
+; register_file:inst|registradores~198     ; Lost fanout                                  ;
+; register_file:inst|registradores~199     ; Lost fanout                                  ;
+; register_file:inst|registradores~200     ; Lost fanout                                  ;
+; register_file:inst|registradores~201     ; Lost fanout                                  ;
+; register_file:inst|registradores~202     ; Lost fanout                                  ;
+; register_file:inst|registradores~203     ; Lost fanout                                  ;
+; register_file:inst|registradores~204     ; Lost fanout                                  ;
+; register_file:inst|registradores~205     ; Lost fanout                                  ;
+; register_file:inst|registradores~206     ; Lost fanout                                  ;
+; register_file:inst|registradores~207     ; Lost fanout                                  ;
+; register_file:inst|registradores~208     ; Lost fanout                                  ;
+; register_file:inst|registradores~209     ; Lost fanout                                  ;
+; register_file:inst|registradores~210     ; Lost fanout                                  ;
+; register_file:inst|registradores~211     ; Lost fanout                                  ;
+; register_file:inst|registradores~212     ; Lost fanout                                  ;
+; register_file:inst|registradores~213     ; Lost fanout                                  ;
+; register_file:inst|registradores~214     ; Lost fanout                                  ;
+; register_file:inst|registradores~215     ; Lost fanout                                  ;
+; register_file:inst|registradores~216     ; Lost fanout                                  ;
+; register_file:inst|registradores~217     ; Lost fanout                                  ;
+; register_file:inst|registradores~218     ; Lost fanout                                  ;
+; register_file:inst|registradores~219     ; Lost fanout                                  ;
+; register_file:inst|registradores~220     ; Lost fanout                                  ;
+; register_file:inst|registradores~221     ; Lost fanout                                  ;
+; register_file:inst|registradores~222     ; Lost fanout                                  ;
+; register_file:inst|registradores~223     ; Lost fanout                                  ;
+; register_file:inst|registradores~224     ; Lost fanout                                  ;
+; register_file:inst|registradores~225     ; Lost fanout                                  ;
+; register_file:inst|registradores~226     ; Lost fanout                                  ;
+; register_file:inst|registradores~227     ; Lost fanout                                  ;
+; register_file:inst|registradores~228     ; Lost fanout                                  ;
+; register_file:inst|registradores~229     ; Lost fanout                                  ;
+; register_file:inst|registradores~230     ; Lost fanout                                  ;
+; register_file:inst|registradores~231     ; Lost fanout                                  ;
+; register_file:inst|registradores~232     ; Lost fanout                                  ;
+; register_file:inst|registradores~233     ; Lost fanout                                  ;
+; register_file:inst|registradores~234     ; Lost fanout                                  ;
+; register_file:inst|registradores~235     ; Lost fanout                                  ;
+; register_file:inst|registradores~236     ; Lost fanout                                  ;
+; register_file:inst|registradores~237     ; Lost fanout                                  ;
+; register_file:inst|registradores~238     ; Lost fanout                                  ;
+; register_file:inst|registradores~239     ; Lost fanout                                  ;
+; register_file:inst|registradores~240     ; Lost fanout                                  ;
+; register_file:inst|registradores~241     ; Lost fanout                                  ;
+; register_file:inst|registradores~242     ; Lost fanout                                  ;
+; register_file:inst|registradores~243     ; Lost fanout                                  ;
+; register_file:inst|registradores~244     ; Lost fanout                                  ;
+; register_file:inst|registradores~245     ; Lost fanout                                  ;
+; register_file:inst|registradores~246     ; Lost fanout                                  ;
+; register_file:inst|registradores~247     ; Lost fanout                                  ;
+; register_file:inst|registradores~248     ; Lost fanout                                  ;
+; register_file:inst|registradores~249     ; Lost fanout                                  ;
+; register_file:inst|registradores~250     ; Lost fanout                                  ;
+; register_file:inst|registradores~251     ; Lost fanout                                  ;
+; register_file:inst|registradores~252     ; Lost fanout                                  ;
+; register_file:inst|registradores~253     ; Lost fanout                                  ;
+; register_file:inst|registradores~254     ; Lost fanout                                  ;
+; register_file:inst|registradores~255     ; Lost fanout                                  ;
+; register_file:inst|registradores~256     ; Lost fanout                                  ;
+; register_file:inst|registradores~257     ; Lost fanout                                  ;
+; register_file:inst|registradores~258     ; Lost fanout                                  ;
+; register_file:inst|registradores~259     ; Lost fanout                                  ;
+; register_file:inst|registradores~260     ; Lost fanout                                  ;
+; register_file:inst|registradores~261     ; Lost fanout                                  ;
+; register_file:inst|registradores~262     ; Lost fanout                                  ;
+; register_file:inst|registradores~263     ; Lost fanout                                  ;
+; register_file:inst|registradores~264     ; Lost fanout                                  ;
+; register_file:inst|registradores~265     ; Lost fanout                                  ;
+; register_file:inst|registradores~266     ; Lost fanout                                  ;
+; register_file:inst|registradores~267     ; Lost fanout                                  ;
+; register_file:inst|registradores~268     ; Lost fanout                                  ;
+; register_file:inst|registradores~269     ; Lost fanout                                  ;
+; register_file:inst|registradores~270     ; Lost fanout                                  ;
+; register_file:inst|registradores~271     ; Lost fanout                                  ;
+; register_file:inst|registradores~272     ; Lost fanout                                  ;
+; register_file:inst|registradores~273     ; Lost fanout                                  ;
+; register_file:inst|registradores~274     ; Lost fanout                                  ;
+; register_file:inst|registradores~275     ; Lost fanout                                  ;
+; register_file:inst|registradores~276     ; Lost fanout                                  ;
+; register_file:inst|registradores~277     ; Lost fanout                                  ;
+; register_file:inst|registradores~278     ; Lost fanout                                  ;
+; register_file:inst|registradores~279     ; Lost fanout                                  ;
+; register_file:inst|registradores~280     ; Lost fanout                                  ;
+; register_file:inst|registradores~281     ; Lost fanout                                  ;
+; register_file:inst|registradores~282     ; Lost fanout                                  ;
+; register_file:inst|registradores~283     ; Lost fanout                                  ;
+; register_file:inst|registradores~284     ; Lost fanout                                  ;
+; register_file:inst|registradores~285     ; Lost fanout                                  ;
+; register_file:inst|registradores~286     ; Lost fanout                                  ;
+; register_file:inst|registradores~287     ; Lost fanout                                  ;
+; register_file:inst|registradores~288     ; Lost fanout                                  ;
+; register_file:inst|registradores~289     ; Lost fanout                                  ;
+; register_file:inst|registradores~290     ; Lost fanout                                  ;
+; register_file:inst|registradores~291     ; Lost fanout                                  ;
+; register_file:inst|registradores~292     ; Lost fanout                                  ;
+; register_file:inst|registradores~293     ; Lost fanout                                  ;
+; register_file:inst|registradores~422     ; Lost fanout                                  ;
+; register_file:inst|registradores~423     ; Lost fanout                                  ;
+; register_file:inst|registradores~424     ; Lost fanout                                  ;
+; register_file:inst|registradores~425     ; Lost fanout                                  ;
+; register_file:inst|registradores~426     ; Lost fanout                                  ;
+; register_file:inst|registradores~427     ; Lost fanout                                  ;
+; register_file:inst|registradores~428     ; Lost fanout                                  ;
+; register_file:inst|registradores~429     ; Lost fanout                                  ;
+; register_file:inst|registradores~430     ; Lost fanout                                  ;
+; register_file:inst|registradores~431     ; Lost fanout                                  ;
+; register_file:inst|registradores~432     ; Lost fanout                                  ;
+; register_file:inst|registradores~433     ; Lost fanout                                  ;
+; register_file:inst|registradores~434     ; Lost fanout                                  ;
+; register_file:inst|registradores~435     ; Lost fanout                                  ;
+; register_file:inst|registradores~436     ; Lost fanout                                  ;
+; register_file:inst|registradores~437     ; Lost fanout                                  ;
+; register_file:inst|registradores~438     ; Lost fanout                                  ;
+; register_file:inst|registradores~439     ; Lost fanout                                  ;
+; register_file:inst|registradores~440     ; Lost fanout                                  ;
+; register_file:inst|registradores~441     ; Lost fanout                                  ;
+; register_file:inst|registradores~442     ; Lost fanout                                  ;
+; register_file:inst|registradores~443     ; Lost fanout                                  ;
+; register_file:inst|registradores~444     ; Lost fanout                                  ;
+; register_file:inst|registradores~445     ; Lost fanout                                  ;
+; register_file:inst|registradores~446     ; Lost fanout                                  ;
+; register_file:inst|registradores~447     ; Lost fanout                                  ;
+; register_file:inst|registradores~448     ; Lost fanout                                  ;
+; register_file:inst|registradores~449     ; Lost fanout                                  ;
+; register_file:inst|registradores~450     ; Lost fanout                                  ;
+; register_file:inst|registradores~451     ; Lost fanout                                  ;
+; register_file:inst|registradores~452     ; Lost fanout                                  ;
+; register_file:inst|registradores~453     ; Lost fanout                                  ;
+; register_file:inst|registradores~454     ; Lost fanout                                  ;
+; register_file:inst|registradores~455     ; Lost fanout                                  ;
+; register_file:inst|registradores~456     ; Lost fanout                                  ;
+; register_file:inst|registradores~457     ; Lost fanout                                  ;
+; register_file:inst|registradores~458     ; Lost fanout                                  ;
+; register_file:inst|registradores~459     ; Lost fanout                                  ;
+; register_file:inst|registradores~460     ; Lost fanout                                  ;
+; register_file:inst|registradores~461     ; Lost fanout                                  ;
+; register_file:inst|registradores~462     ; Lost fanout                                  ;
+; register_file:inst|registradores~463     ; Lost fanout                                  ;
+; register_file:inst|registradores~464     ; Lost fanout                                  ;
+; register_file:inst|registradores~465     ; Lost fanout                                  ;
+; register_file:inst|registradores~466     ; Lost fanout                                  ;
+; register_file:inst|registradores~467     ; Lost fanout                                  ;
+; register_file:inst|registradores~468     ; Lost fanout                                  ;
+; register_file:inst|registradores~469     ; Lost fanout                                  ;
+; register_file:inst|registradores~470     ; Lost fanout                                  ;
+; register_file:inst|registradores~471     ; Lost fanout                                  ;
+; register_file:inst|registradores~472     ; Lost fanout                                  ;
+; register_file:inst|registradores~473     ; Lost fanout                                  ;
+; register_file:inst|registradores~474     ; Lost fanout                                  ;
+; register_file:inst|registradores~475     ; Lost fanout                                  ;
+; register_file:inst|registradores~476     ; Lost fanout                                  ;
+; register_file:inst|registradores~477     ; Lost fanout                                  ;
+; register_file:inst|registradores~478     ; Lost fanout                                  ;
+; register_file:inst|registradores~479     ; Lost fanout                                  ;
+; register_file:inst|registradores~480     ; Lost fanout                                  ;
+; register_file:inst|registradores~481     ; Lost fanout                                  ;
+; register_file:inst|registradores~482     ; Lost fanout                                  ;
+; register_file:inst|registradores~483     ; Lost fanout                                  ;
+; register_file:inst|registradores~484     ; Lost fanout                                  ;
+; register_file:inst|registradores~485     ; Lost fanout                                  ;
+; register_file:inst|registradores~486     ; Lost fanout                                  ;
+; register_file:inst|registradores~487     ; Lost fanout                                  ;
+; register_file:inst|registradores~488     ; Lost fanout                                  ;
+; register_file:inst|registradores~489     ; Lost fanout                                  ;
+; register_file:inst|registradores~490     ; Lost fanout                                  ;
+; register_file:inst|registradores~491     ; Lost fanout                                  ;
+; register_file:inst|registradores~492     ; Lost fanout                                  ;
+; register_file:inst|registradores~493     ; Lost fanout                                  ;
+; register_file:inst|registradores~494     ; Lost fanout                                  ;
+; register_file:inst|registradores~495     ; Lost fanout                                  ;
+; register_file:inst|registradores~496     ; Lost fanout                                  ;
+; register_file:inst|registradores~497     ; Lost fanout                                  ;
+; register_file:inst|registradores~498     ; Lost fanout                                  ;
+; register_file:inst|registradores~499     ; Lost fanout                                  ;
+; register_file:inst|registradores~500     ; Lost fanout                                  ;
+; register_file:inst|registradores~501     ; Lost fanout                                  ;
+; register_file:inst|registradores~502     ; Lost fanout                                  ;
+; register_file:inst|registradores~503     ; Lost fanout                                  ;
+; register_file:inst|registradores~504     ; Lost fanout                                  ;
+; register_file:inst|registradores~505     ; Lost fanout                                  ;
+; register_file:inst|registradores~506     ; Lost fanout                                  ;
+; register_file:inst|registradores~507     ; Lost fanout                                  ;
+; register_file:inst|registradores~508     ; Lost fanout                                  ;
+; register_file:inst|registradores~509     ; Lost fanout                                  ;
+; register_file:inst|registradores~510     ; Lost fanout                                  ;
+; register_file:inst|registradores~511     ; Lost fanout                                  ;
+; register_file:inst|registradores~512     ; Lost fanout                                  ;
+; register_file:inst|registradores~513     ; Lost fanout                                  ;
+; register_file:inst|registradores~514     ; Lost fanout                                  ;
+; register_file:inst|registradores~515     ; Lost fanout                                  ;
+; register_file:inst|registradores~516     ; Lost fanout                                  ;
+; register_file:inst|registradores~517     ; Lost fanout                                  ;
+; register_file:inst|registradores~518     ; Lost fanout                                  ;
+; register_file:inst|registradores~519     ; Lost fanout                                  ;
+; register_file:inst|registradores~520     ; Lost fanout                                  ;
+; register_file:inst|registradores~521     ; Lost fanout                                  ;
+; register_file:inst|registradores~522     ; Lost fanout                                  ;
+; register_file:inst|registradores~523     ; Lost fanout                                  ;
+; register_file:inst|registradores~524     ; Lost fanout                                  ;
+; register_file:inst|registradores~525     ; Lost fanout                                  ;
+; register_file:inst|registradores~526     ; Lost fanout                                  ;
+; register_file:inst|registradores~527     ; Lost fanout                                  ;
+; register_file:inst|registradores~528     ; Lost fanout                                  ;
+; register_file:inst|registradores~529     ; Lost fanout                                  ;
+; register_file:inst|registradores~530     ; Lost fanout                                  ;
+; register_file:inst|registradores~531     ; Lost fanout                                  ;
+; register_file:inst|registradores~532     ; Lost fanout                                  ;
+; register_file:inst|registradores~533     ; Lost fanout                                  ;
+; register_file:inst|registradores~534     ; Lost fanout                                  ;
+; register_file:inst|registradores~535     ; Lost fanout                                  ;
+; register_file:inst|registradores~536     ; Lost fanout                                  ;
+; register_file:inst|registradores~537     ; Lost fanout                                  ;
+; register_file:inst|registradores~538     ; Lost fanout                                  ;
+; register_file:inst|registradores~539     ; Lost fanout                                  ;
+; register_file:inst|registradores~540     ; Lost fanout                                  ;
+; register_file:inst|registradores~541     ; Lost fanout                                  ;
+; register_file:inst|registradores~542     ; Lost fanout                                  ;
+; register_file:inst|registradores~543     ; Lost fanout                                  ;
+; register_file:inst|registradores~544     ; Lost fanout                                  ;
+; register_file:inst|registradores~545     ; Lost fanout                                  ;
+; register_file:inst|registradores~546     ; Lost fanout                                  ;
+; register_file:inst|registradores~547     ; Lost fanout                                  ;
+; register_file:inst|registradores~548     ; Lost fanout                                  ;
+; register_file:inst|registradores~549     ; Lost fanout                                  ;
+; register_file:inst|registradores~550     ; Lost fanout                                  ;
+; register_file:inst|registradores~551     ; Lost fanout                                  ;
+; register_file:inst|registradores~552     ; Lost fanout                                  ;
+; register_file:inst|registradores~553     ; Lost fanout                                  ;
+; register_file:inst|registradores~554     ; Lost fanout                                  ;
+; register_file:inst|registradores~555     ; Lost fanout                                  ;
+; register_file:inst|registradores~556     ; Lost fanout                                  ;
+; register_file:inst|registradores~557     ; Lost fanout                                  ;
+; register_file:inst|registradores~558     ; Lost fanout                                  ;
+; register_file:inst|registradores~559     ; Lost fanout                                  ;
+; register_file:inst|registradores~560     ; Lost fanout                                  ;
+; register_file:inst|registradores~561     ; Lost fanout                                  ;
+; register_file:inst|registradores~562     ; Lost fanout                                  ;
+; register_file:inst|registradores~563     ; Lost fanout                                  ;
+; register_file:inst|registradores~564     ; Lost fanout                                  ;
+; register_file:inst|registradores~565     ; Lost fanout                                  ;
+; register_file:inst|registradores~566     ; Lost fanout                                  ;
+; register_file:inst|registradores~567     ; Lost fanout                                  ;
+; register_file:inst|registradores~568     ; Lost fanout                                  ;
+; register_file:inst|registradores~569     ; Lost fanout                                  ;
+; register_file:inst|registradores~570     ; Lost fanout                                  ;
+; register_file:inst|registradores~571     ; Lost fanout                                  ;
+; register_file:inst|registradores~572     ; Lost fanout                                  ;
+; register_file:inst|registradores~573     ; Lost fanout                                  ;
+; register_file:inst|registradores~574     ; Lost fanout                                  ;
+; register_file:inst|registradores~575     ; Lost fanout                                  ;
+; register_file:inst|registradores~576     ; Lost fanout                                  ;
+; register_file:inst|registradores~577     ; Lost fanout                                  ;
+; register_file:inst|registradores~578     ; Lost fanout                                  ;
+; register_file:inst|registradores~579     ; Lost fanout                                  ;
+; register_file:inst|registradores~580     ; Lost fanout                                  ;
+; register_file:inst|registradores~581     ; Lost fanout                                  ;
+; register_file:inst|registradores~582     ; Lost fanout                                  ;
+; register_file:inst|registradores~583     ; Lost fanout                                  ;
+; register_file:inst|registradores~584     ; Lost fanout                                  ;
+; register_file:inst|registradores~585     ; Lost fanout                                  ;
+; register_file:inst|registradores~586     ; Lost fanout                                  ;
+; register_file:inst|registradores~587     ; Lost fanout                                  ;
+; register_file:inst|registradores~588     ; Lost fanout                                  ;
+; register_file:inst|registradores~589     ; Lost fanout                                  ;
+; register_file:inst|registradores~590     ; Lost fanout                                  ;
+; register_file:inst|registradores~591     ; Lost fanout                                  ;
+; register_file:inst|registradores~592     ; Lost fanout                                  ;
+; register_file:inst|registradores~593     ; Lost fanout                                  ;
+; register_file:inst|registradores~594     ; Lost fanout                                  ;
+; register_file:inst|registradores~595     ; Lost fanout                                  ;
+; register_file:inst|registradores~596     ; Lost fanout                                  ;
+; register_file:inst|registradores~597     ; Lost fanout                                  ;
+; register_file:inst|registradores~598     ; Lost fanout                                  ;
+; register_file:inst|registradores~599     ; Lost fanout                                  ;
+; register_file:inst|registradores~600     ; Lost fanout                                  ;
+; register_file:inst|registradores~601     ; Lost fanout                                  ;
+; register_file:inst|registradores~602     ; Lost fanout                                  ;
+; register_file:inst|registradores~603     ; Lost fanout                                  ;
+; register_file:inst|registradores~604     ; Lost fanout                                  ;
+; register_file:inst|registradores~605     ; Lost fanout                                  ;
+; register_file:inst|registradores~606     ; Lost fanout                                  ;
+; register_file:inst|registradores~607     ; Lost fanout                                  ;
+; register_file:inst|registradores~608     ; Lost fanout                                  ;
+; register_file:inst|registradores~609     ; Lost fanout                                  ;
+; register_file:inst|registradores~610     ; Lost fanout                                  ;
+; register_file:inst|registradores~611     ; Lost fanout                                  ;
+; register_file:inst|registradores~612     ; Lost fanout                                  ;
+; register_file:inst|registradores~613     ; Lost fanout                                  ;
+; register_file:inst|registradores~614     ; Lost fanout                                  ;
+; register_file:inst|registradores~615     ; Lost fanout                                  ;
+; register_file:inst|registradores~616     ; Lost fanout                                  ;
+; register_file:inst|registradores~617     ; Lost fanout                                  ;
+; register_file:inst|registradores~618     ; Lost fanout                                  ;
+; register_file:inst|registradores~619     ; Lost fanout                                  ;
+; register_file:inst|registradores~620     ; Lost fanout                                  ;
+; register_file:inst|registradores~621     ; Lost fanout                                  ;
+; register_file:inst|registradores~622     ; Lost fanout                                  ;
+; register_file:inst|registradores~623     ; Lost fanout                                  ;
+; register_file:inst|registradores~624     ; Lost fanout                                  ;
+; register_file:inst|registradores~625     ; Lost fanout                                  ;
+; register_file:inst|registradores~626     ; Lost fanout                                  ;
+; register_file:inst|registradores~627     ; Lost fanout                                  ;
+; register_file:inst|registradores~628     ; Lost fanout                                  ;
+; register_file:inst|registradores~629     ; Lost fanout                                  ;
+; register_file:inst|registradores~630     ; Lost fanout                                  ;
+; register_file:inst|registradores~631     ; Lost fanout                                  ;
+; register_file:inst|registradores~632     ; Lost fanout                                  ;
+; register_file:inst|registradores~633     ; Lost fanout                                  ;
+; register_file:inst|registradores~634     ; Lost fanout                                  ;
+; register_file:inst|registradores~635     ; Lost fanout                                  ;
+; register_file:inst|registradores~636     ; Lost fanout                                  ;
+; register_file:inst|registradores~637     ; Lost fanout                                  ;
+; register_file:inst|registradores~638     ; Lost fanout                                  ;
+; register_file:inst|registradores~639     ; Lost fanout                                  ;
+; register_file:inst|registradores~640     ; Lost fanout                                  ;
+; register_file:inst|registradores~641     ; Lost fanout                                  ;
+; register_file:inst|registradores~642     ; Lost fanout                                  ;
+; register_file:inst|registradores~643     ; Lost fanout                                  ;
+; register_file:inst|registradores~644     ; Lost fanout                                  ;
+; register_file:inst|registradores~645     ; Lost fanout                                  ;
+; register_file:inst|registradores~646     ; Lost fanout                                  ;
+; register_file:inst|registradores~647     ; Lost fanout                                  ;
+; register_file:inst|registradores~648     ; Lost fanout                                  ;
+; register_file:inst|registradores~649     ; Lost fanout                                  ;
+; register_file:inst|registradores~650     ; Lost fanout                                  ;
+; register_file:inst|registradores~651     ; Lost fanout                                  ;
+; register_file:inst|registradores~652     ; Lost fanout                                  ;
+; register_file:inst|registradores~653     ; Lost fanout                                  ;
+; register_file:inst|registradores~654     ; Lost fanout                                  ;
+; register_file:inst|registradores~655     ; Lost fanout                                  ;
+; register_file:inst|registradores~656     ; Lost fanout                                  ;
+; register_file:inst|registradores~657     ; Lost fanout                                  ;
+; register_file:inst|registradores~658     ; Lost fanout                                  ;
+; register_file:inst|registradores~659     ; Lost fanout                                  ;
+; register_file:inst|registradores~660     ; Lost fanout                                  ;
+; register_file:inst|registradores~661     ; Lost fanout                                  ;
+; register_file:inst|registradores~662     ; Lost fanout                                  ;
+; register_file:inst|registradores~663     ; Lost fanout                                  ;
+; register_file:inst|registradores~664     ; Lost fanout                                  ;
+; register_file:inst|registradores~665     ; Lost fanout                                  ;
+; register_file:inst|registradores~666     ; Lost fanout                                  ;
+; register_file:inst|registradores~667     ; Lost fanout                                  ;
+; register_file:inst|registradores~668     ; Lost fanout                                  ;
+; register_file:inst|registradores~669     ; Lost fanout                                  ;
+; register_file:inst|registradores~670     ; Lost fanout                                  ;
+; register_file:inst|registradores~671     ; Lost fanout                                  ;
+; register_file:inst|registradores~672     ; Lost fanout                                  ;
+; register_file:inst|registradores~673     ; Lost fanout                                  ;
+; register_file:inst|registradores~674     ; Lost fanout                                  ;
+; register_file:inst|registradores~675     ; Lost fanout                                  ;
+; register_file:inst|registradores~676     ; Lost fanout                                  ;
+; register_file:inst|registradores~677     ; Lost fanout                                  ;
+; register_file:inst|registradores~678     ; Lost fanout                                  ;
+; register_file:inst|registradores~679     ; Lost fanout                                  ;
+; register_file:inst|registradores~680     ; Lost fanout                                  ;
+; register_file:inst|registradores~681     ; Lost fanout                                  ;
+; register_file:inst|registradores~682     ; Lost fanout                                  ;
+; register_file:inst|registradores~683     ; Lost fanout                                  ;
+; register_file:inst|registradores~684     ; Lost fanout                                  ;
+; register_file:inst|registradores~685     ; Lost fanout                                  ;
+; register_file:inst|registradores~686     ; Lost fanout                                  ;
+; register_file:inst|registradores~687     ; Lost fanout                                  ;
+; register_file:inst|registradores~688     ; Lost fanout                                  ;
+; register_file:inst|registradores~689     ; Lost fanout                                  ;
+; register_file:inst|registradores~690     ; Lost fanout                                  ;
+; register_file:inst|registradores~691     ; Lost fanout                                  ;
+; register_file:inst|registradores~692     ; Lost fanout                                  ;
+; register_file:inst|registradores~693     ; Lost fanout                                  ;
+; register_file:inst|registradores~694     ; Lost fanout                                  ;
+; register_file:inst|registradores~695     ; Lost fanout                                  ;
+; register_file:inst|registradores~696     ; Lost fanout                                  ;
+; register_file:inst|registradores~697     ; Lost fanout                                  ;
+; register_file:inst|registradores~698     ; Lost fanout                                  ;
+; register_file:inst|registradores~699     ; Lost fanout                                  ;
+; register_file:inst|registradores~700     ; Lost fanout                                  ;
+; register_file:inst|registradores~701     ; Lost fanout                                  ;
+; register_file:inst|registradores~702     ; Lost fanout                                  ;
+; register_file:inst|registradores~703     ; Lost fanout                                  ;
+; register_file:inst|registradores~704     ; Lost fanout                                  ;
+; register_file:inst|registradores~705     ; Lost fanout                                  ;
+; register_file:inst|registradores~706     ; Lost fanout                                  ;
+; register_file:inst|registradores~707     ; Lost fanout                                  ;
+; register_file:inst|registradores~708     ; Lost fanout                                  ;
+; register_file:inst|registradores~709     ; Lost fanout                                  ;
+; register_file:inst|registradores~710     ; Lost fanout                                  ;
+; register_file:inst|registradores~711     ; Lost fanout                                  ;
+; register_file:inst|registradores~712     ; Lost fanout                                  ;
+; register_file:inst|registradores~713     ; Lost fanout                                  ;
+; register_file:inst|registradores~714     ; Lost fanout                                  ;
+; register_file:inst|registradores~715     ; Lost fanout                                  ;
+; register_file:inst|registradores~716     ; Lost fanout                                  ;
+; register_file:inst|registradores~717     ; Lost fanout                                  ;
+; register_file:inst|registradores~718     ; Lost fanout                                  ;
+; register_file:inst|registradores~719     ; Lost fanout                                  ;
+; register_file:inst|registradores~720     ; Lost fanout                                  ;
+; register_file:inst|registradores~721     ; Lost fanout                                  ;
+; register_file:inst|registradores~722     ; Lost fanout                                  ;
+; register_file:inst|registradores~723     ; Lost fanout                                  ;
+; register_file:inst|registradores~724     ; Lost fanout                                  ;
+; register_file:inst|registradores~725     ; Lost fanout                                  ;
+; register_file:inst|registradores~726     ; Lost fanout                                  ;
+; register_file:inst|registradores~727     ; Lost fanout                                  ;
+; register_file:inst|registradores~728     ; Lost fanout                                  ;
+; register_file:inst|registradores~729     ; Lost fanout                                  ;
+; register_file:inst|registradores~730     ; Lost fanout                                  ;
+; register_file:inst|registradores~731     ; Lost fanout                                  ;
+; register_file:inst|registradores~732     ; Lost fanout                                  ;
+; register_file:inst|registradores~733     ; Lost fanout                                  ;
+; register_file:inst|registradores~734     ; Lost fanout                                  ;
+; register_file:inst|registradores~735     ; Lost fanout                                  ;
+; register_file:inst|registradores~736     ; Lost fanout                                  ;
+; register_file:inst|registradores~737     ; Lost fanout                                  ;
+; register_file:inst|registradores~738     ; Lost fanout                                  ;
+; register_file:inst|registradores~739     ; Lost fanout                                  ;
+; register_file:inst|registradores~740     ; Lost fanout                                  ;
+; register_file:inst|registradores~741     ; Lost fanout                                  ;
+; register_file:inst|registradores~742     ; Lost fanout                                  ;
+; register_file:inst|registradores~743     ; Lost fanout                                  ;
+; register_file:inst|registradores~744     ; Lost fanout                                  ;
+; register_file:inst|registradores~745     ; Lost fanout                                  ;
+; register_file:inst|registradores~746     ; Lost fanout                                  ;
+; register_file:inst|registradores~747     ; Lost fanout                                  ;
+; register_file:inst|registradores~748     ; Lost fanout                                  ;
+; register_file:inst|registradores~749     ; Lost fanout                                  ;
+; register_file:inst|registradores~750     ; Lost fanout                                  ;
+; register_file:inst|registradores~751     ; Lost fanout                                  ;
+; register_file:inst|registradores~752     ; Lost fanout                                  ;
+; register_file:inst|registradores~753     ; Lost fanout                                  ;
+; register_file:inst|registradores~754     ; Lost fanout                                  ;
+; register_file:inst|registradores~755     ; Lost fanout                                  ;
+; register_file:inst|registradores~756     ; Lost fanout                                  ;
+; register_file:inst|registradores~757     ; Lost fanout                                  ;
+; register_file:inst|registradores~758     ; Lost fanout                                  ;
+; register_file:inst|registradores~759     ; Lost fanout                                  ;
+; register_file:inst|registradores~760     ; Lost fanout                                  ;
+; register_file:inst|registradores~761     ; Lost fanout                                  ;
+; register_file:inst|registradores~762     ; Lost fanout                                  ;
+; register_file:inst|registradores~763     ; Lost fanout                                  ;
+; register_file:inst|registradores~764     ; Lost fanout                                  ;
+; register_file:inst|registradores~765     ; Lost fanout                                  ;
+; register_file:inst|registradores~766     ; Lost fanout                                  ;
+; register_file:inst|registradores~767     ; Lost fanout                                  ;
+; register_file:inst|registradores~768     ; Lost fanout                                  ;
+; register_file:inst|registradores~769     ; Lost fanout                                  ;
+; register_file:inst|registradores~770     ; Lost fanout                                  ;
+; register_file:inst|registradores~771     ; Lost fanout                                  ;
+; register_file:inst|registradores~772     ; Lost fanout                                  ;
+; register_file:inst|registradores~773     ; Lost fanout                                  ;
+; register_file:inst|registradores~774     ; Lost fanout                                  ;
+; register_file:inst|registradores~775     ; Lost fanout                                  ;
+; register_file:inst|registradores~776     ; Lost fanout                                  ;
+; register_file:inst|registradores~777     ; Lost fanout                                  ;
+; register_file:inst|registradores~778     ; Lost fanout                                  ;
+; register_file:inst|registradores~779     ; Lost fanout                                  ;
+; register_file:inst|registradores~780     ; Lost fanout                                  ;
+; register_file:inst|registradores~781     ; Lost fanout                                  ;
+; register_file:inst|registradores~782     ; Lost fanout                                  ;
+; register_file:inst|registradores~783     ; Lost fanout                                  ;
+; register_file:inst|registradores~784     ; Lost fanout                                  ;
+; register_file:inst|registradores~785     ; Lost fanout                                  ;
+; register_file:inst|registradores~786     ; Lost fanout                                  ;
+; register_file:inst|registradores~787     ; Lost fanout                                  ;
+; register_file:inst|registradores~788     ; Lost fanout                                  ;
+; register_file:inst|registradores~789     ; Lost fanout                                  ;
+; register_file:inst|registradores~790     ; Lost fanout                                  ;
+; register_file:inst|registradores~791     ; Lost fanout                                  ;
+; register_file:inst|registradores~792     ; Lost fanout                                  ;
+; register_file:inst|registradores~793     ; Lost fanout                                  ;
+; register_file:inst|registradores~794     ; Lost fanout                                  ;
+; register_file:inst|registradores~795     ; Lost fanout                                  ;
+; register_file:inst|registradores~796     ; Lost fanout                                  ;
+; register_file:inst|registradores~797     ; Lost fanout                                  ;
+; register_file:inst|registradores~798     ; Lost fanout                                  ;
+; register_file:inst|registradores~799     ; Lost fanout                                  ;
+; register_file:inst|registradores~800     ; Lost fanout                                  ;
+; register_file:inst|registradores~801     ; Lost fanout                                  ;
+; register_file:inst|registradores~802     ; Lost fanout                                  ;
+; register_file:inst|registradores~803     ; Lost fanout                                  ;
+; register_file:inst|registradores~804     ; Lost fanout                                  ;
+; register_file:inst|registradores~805     ; Lost fanout                                  ;
+; register_file:inst|registradores~806     ; Lost fanout                                  ;
+; register_file:inst|registradores~807     ; Lost fanout                                  ;
+; register_file:inst|registradores~808     ; Lost fanout                                  ;
+; register_file:inst|registradores~809     ; Lost fanout                                  ;
+; register_file:inst|registradores~810     ; Lost fanout                                  ;
+; register_file:inst|registradores~811     ; Lost fanout                                  ;
+; register_file:inst|registradores~812     ; Lost fanout                                  ;
+; register_file:inst|registradores~813     ; Lost fanout                                  ;
+; register_file:inst|registradores~814     ; Lost fanout                                  ;
+; register_file:inst|registradores~815     ; Lost fanout                                  ;
+; register_file:inst|registradores~816     ; Lost fanout                                  ;
+; register_file:inst|registradores~817     ; Lost fanout                                  ;
+; register_file:inst|registradores~818     ; Lost fanout                                  ;
+; register_file:inst|registradores~819     ; Lost fanout                                  ;
+; register_file:inst|registradores~820     ; Lost fanout                                  ;
+; register_file:inst|registradores~821     ; Lost fanout                                  ;
+; register_file:inst|registradores~822     ; Lost fanout                                  ;
+; register_file:inst|registradores~823     ; Lost fanout                                  ;
+; register_file:inst|registradores~824     ; Lost fanout                                  ;
+; register_file:inst|registradores~825     ; Lost fanout                                  ;
+; register_file:inst|registradores~826     ; Lost fanout                                  ;
+; register_file:inst|registradores~827     ; Lost fanout                                  ;
+; register_file:inst|registradores~828     ; Lost fanout                                  ;
+; register_file:inst|registradores~829     ; Lost fanout                                  ;
+; register_file:inst|registradores~830     ; Lost fanout                                  ;
+; register_file:inst|registradores~831     ; Lost fanout                                  ;
+; register_file:inst|registradores~832     ; Lost fanout                                  ;
+; register_file:inst|registradores~833     ; Lost fanout                                  ;
+; register_file:inst|registradores~834     ; Lost fanout                                  ;
+; register_file:inst|registradores~835     ; Lost fanout                                  ;
+; register_file:inst|registradores~836     ; Lost fanout                                  ;
+; register_file:inst|registradores~837     ; Lost fanout                                  ;
+; register_file:inst|registradores~838     ; Lost fanout                                  ;
+; register_file:inst|registradores~839     ; Lost fanout                                  ;
+; register_file:inst|registradores~840     ; Lost fanout                                  ;
+; register_file:inst|registradores~841     ; Lost fanout                                  ;
+; register_file:inst|registradores~842     ; Lost fanout                                  ;
+; register_file:inst|registradores~843     ; Lost fanout                                  ;
+; register_file:inst|registradores~844     ; Lost fanout                                  ;
+; register_file:inst|registradores~845     ; Lost fanout                                  ;
+; register_file:inst|registradores~846     ; Lost fanout                                  ;
+; register_file:inst|registradores~847     ; Lost fanout                                  ;
+; register_file:inst|registradores~848     ; Lost fanout                                  ;
+; register_file:inst|registradores~849     ; Lost fanout                                  ;
+; register_file:inst|registradores~850     ; Lost fanout                                  ;
+; register_file:inst|registradores~851     ; Lost fanout                                  ;
+; register_file:inst|registradores~852     ; Lost fanout                                  ;
+; register_file:inst|registradores~853     ; Lost fanout                                  ;
+; register_file:inst|registradores~854     ; Lost fanout                                  ;
+; register_file:inst|registradores~855     ; Lost fanout                                  ;
+; register_file:inst|registradores~856     ; Lost fanout                                  ;
+; register_file:inst|registradores~857     ; Lost fanout                                  ;
+; register_file:inst|registradores~858     ; Lost fanout                                  ;
+; register_file:inst|registradores~859     ; Lost fanout                                  ;
+; register_file:inst|registradores~860     ; Lost fanout                                  ;
+; register_file:inst|registradores~861     ; Lost fanout                                  ;
+; register_file:inst|registradores~862     ; Lost fanout                                  ;
+; register_file:inst|registradores~863     ; Lost fanout                                  ;
+; register_file:inst|registradores~864     ; Lost fanout                                  ;
+; register_file:inst|registradores~865     ; Lost fanout                                  ;
+; register_file:inst|registradores~866     ; Lost fanout                                  ;
+; register_file:inst|registradores~867     ; Lost fanout                                  ;
+; register_file:inst|registradores~868     ; Lost fanout                                  ;
+; register_file:inst|registradores~869     ; Lost fanout                                  ;
+; register_file:inst|registradores~870     ; Lost fanout                                  ;
+; register_file:inst|registradores~871     ; Lost fanout                                  ;
+; register_file:inst|registradores~872     ; Lost fanout                                  ;
+; register_file:inst|registradores~873     ; Lost fanout                                  ;
+; register_file:inst|registradores~874     ; Lost fanout                                  ;
+; register_file:inst|registradores~875     ; Lost fanout                                  ;
+; register_file:inst|registradores~876     ; Lost fanout                                  ;
+; register_file:inst|registradores~877     ; Lost fanout                                  ;
+; register_file:inst|registradores~878     ; Lost fanout                                  ;
+; register_file:inst|registradores~879     ; Lost fanout                                  ;
+; register_file:inst|registradores~880     ; Lost fanout                                  ;
+; register_file:inst|registradores~881     ; Lost fanout                                  ;
+; register_file:inst|registradores~882     ; Lost fanout                                  ;
+; register_file:inst|registradores~883     ; Lost fanout                                  ;
+; register_file:inst|registradores~884     ; Lost fanout                                  ;
+; register_file:inst|registradores~885     ; Lost fanout                                  ;
+; register_file:inst|registradores~886     ; Lost fanout                                  ;
+; register_file:inst|registradores~887     ; Lost fanout                                  ;
+; register_file:inst|registradores~888     ; Lost fanout                                  ;
+; register_file:inst|registradores~889     ; Lost fanout                                  ;
+; register_file:inst|registradores~890     ; Lost fanout                                  ;
+; register_file:inst|registradores~891     ; Lost fanout                                  ;
+; register_file:inst|registradores~892     ; Lost fanout                                  ;
+; register_file:inst|registradores~893     ; Lost fanout                                  ;
+; register_file:inst|registradores~894     ; Lost fanout                                  ;
+; register_file:inst|registradores~895     ; Lost fanout                                  ;
+; register_file:inst|registradores~896     ; Lost fanout                                  ;
+; register_file:inst|registradores~897     ; Lost fanout                                  ;
+; register_file:inst|registradores~898     ; Lost fanout                                  ;
+; register_file:inst|registradores~899     ; Lost fanout                                  ;
+; register_file:inst|registradores~900     ; Lost fanout                                  ;
+; register_file:inst|registradores~901     ; Lost fanout                                  ;
+; register_file:inst|registradores~902     ; Lost fanout                                  ;
+; register_file:inst|registradores~903     ; Lost fanout                                  ;
+; register_file:inst|registradores~904     ; Lost fanout                                  ;
+; register_file:inst|registradores~905     ; Lost fanout                                  ;
+; register_file:inst|registradores~906     ; Lost fanout                                  ;
+; register_file:inst|registradores~907     ; Lost fanout                                  ;
+; register_file:inst|registradores~908     ; Lost fanout                                  ;
+; register_file:inst|registradores~909     ; Lost fanout                                  ;
+; register_file:inst|registradores~910     ; Lost fanout                                  ;
+; register_file:inst|registradores~911     ; Lost fanout                                  ;
+; register_file:inst|registradores~912     ; Lost fanout                                  ;
+; register_file:inst|registradores~913     ; Lost fanout                                  ;
+; register_file:inst|registradores~914     ; Lost fanout                                  ;
+; register_file:inst|registradores~915     ; Lost fanout                                  ;
+; register_file:inst|registradores~916     ; Lost fanout                                  ;
+; register_file:inst|registradores~917     ; Lost fanout                                  ;
+; register_file:inst|registradores~918     ; Lost fanout                                  ;
+; register_file:inst|registradores~919     ; Lost fanout                                  ;
+; register_file:inst|registradores~920     ; Lost fanout                                  ;
+; register_file:inst|registradores~921     ; Lost fanout                                  ;
+; register_file:inst|registradores~922     ; Lost fanout                                  ;
+; register_file:inst|registradores~923     ; Lost fanout                                  ;
+; register_file:inst|registradores~924     ; Lost fanout                                  ;
+; register_file:inst|registradores~925     ; Lost fanout                                  ;
+; register_file:inst|registradores~926     ; Lost fanout                                  ;
+; register_file:inst|registradores~927     ; Lost fanout                                  ;
+; register_file:inst|registradores~928     ; Lost fanout                                  ;
+; register_file:inst|registradores~929     ; Lost fanout                                  ;
+; register_file:inst|registradores~930     ; Lost fanout                                  ;
+; register_file:inst|registradores~931     ; Lost fanout                                  ;
+; register_file:inst|registradores~932     ; Lost fanout                                  ;
+; register_file:inst|registradores~933     ; Lost fanout                                  ;
+; register_file:inst|registradores~934     ; Lost fanout                                  ;
+; register_file:inst|registradores~935     ; Lost fanout                                  ;
+; register_file:inst|registradores~936     ; Lost fanout                                  ;
+; register_file:inst|registradores~937     ; Lost fanout                                  ;
+; register_file:inst|registradores~938     ; Lost fanout                                  ;
+; register_file:inst|registradores~939     ; Lost fanout                                  ;
+; register_file:inst|registradores~940     ; Lost fanout                                  ;
+; register_file:inst|registradores~941     ; Lost fanout                                  ;
+; register_file:inst|registradores~942     ; Lost fanout                                  ;
+; register_file:inst|registradores~943     ; Lost fanout                                  ;
+; register_file:inst|registradores~944     ; Lost fanout                                  ;
+; register_file:inst|registradores~945     ; Lost fanout                                  ;
+; register_file:inst|registradores~946     ; Lost fanout                                  ;
+; register_file:inst|registradores~947     ; Lost fanout                                  ;
+; register_file:inst|registradores~948     ; Lost fanout                                  ;
+; register_file:inst|registradores~949     ; Lost fanout                                  ;
+; register_file:inst|registradores~950     ; Lost fanout                                  ;
+; register_file:inst|registradores~951     ; Lost fanout                                  ;
+; register_file:inst|registradores~952     ; Lost fanout                                  ;
+; register_file:inst|registradores~953     ; Lost fanout                                  ;
+; register_file:inst|registradores~954     ; Lost fanout                                  ;
+; register_file:inst|registradores~955     ; Lost fanout                                  ;
+; register_file:inst|registradores~956     ; Lost fanout                                  ;
+; register_file:inst|registradores~957     ; Lost fanout                                  ;
+; register_file:inst|registradores~958     ; Lost fanout                                  ;
+; register_file:inst|registradores~959     ; Lost fanout                                  ;
+; register_file:inst|registradores~960     ; Lost fanout                                  ;
+; register_file:inst|registradores~961     ; Lost fanout                                  ;
+; register_file:inst|registradores~962     ; Lost fanout                                  ;
+; register_file:inst|registradores~963     ; Lost fanout                                  ;
+; register_file:inst|registradores~964     ; Lost fanout                                  ;
+; register_file:inst|registradores~965     ; Lost fanout                                  ;
+; register_file:inst|registradores~966     ; Lost fanout                                  ;
+; register_file:inst|registradores~967     ; Lost fanout                                  ;
+; register_file:inst|registradores~968     ; Lost fanout                                  ;
+; register_file:inst|registradores~969     ; Lost fanout                                  ;
+; register_file:inst|registradores~970     ; Lost fanout                                  ;
+; register_file:inst|registradores~971     ; Lost fanout                                  ;
+; register_file:inst|registradores~972     ; Lost fanout                                  ;
+; register_file:inst|registradores~973     ; Lost fanout                                  ;
+; register_file:inst|registradores~974     ; Lost fanout                                  ;
+; register_file:inst|registradores~975     ; Lost fanout                                  ;
+; register_file:inst|registradores~976     ; Lost fanout                                  ;
+; register_file:inst|registradores~977     ; Lost fanout                                  ;
+; register_file:inst|registradores~978     ; Lost fanout                                  ;
+; register_file:inst|registradores~979     ; Lost fanout                                  ;
+; register_file:inst|registradores~980     ; Lost fanout                                  ;
+; register_file:inst|registradores~981     ; Lost fanout                                  ;
+; register_file:inst|registradores~982     ; Lost fanout                                  ;
+; register_file:inst|registradores~983     ; Lost fanout                                  ;
+; register_file:inst|registradores~984     ; Lost fanout                                  ;
+; register_file:inst|registradores~985     ; Lost fanout                                  ;
+; register_file:inst|registradores~986     ; Lost fanout                                  ;
+; register_file:inst|registradores~987     ; Lost fanout                                  ;
+; register_file:inst|registradores~988     ; Lost fanout                                  ;
+; register_file:inst|registradores~989     ; Lost fanout                                  ;
+; register_file:inst|registradores~990     ; Lost fanout                                  ;
+; register_file:inst|registradores~991     ; Lost fanout                                  ;
+; register_file:inst|registradores~992     ; Lost fanout                                  ;
+; register_file:inst|registradores~993     ; Lost fanout                                  ;
+; register_file:inst|registradores~994     ; Lost fanout                                  ;
+; register_file:inst|registradores~995     ; Lost fanout                                  ;
+; register_file:inst|registradores~996     ; Lost fanout                                  ;
+; register_file:inst|registradores~997     ; Lost fanout                                  ;
+; register_file:inst|registradores~998     ; Lost fanout                                  ;
+; register_file:inst|registradores~999     ; Lost fanout                                  ;
+; register_file:inst|registradores~1000    ; Lost fanout                                  ;
+; register_file:inst|registradores~1001    ; Lost fanout                                  ;
+; register_file:inst|registradores~1002    ; Lost fanout                                  ;
+; register_file:inst|registradores~1003    ; Lost fanout                                  ;
+; register_file:inst|registradores~1004    ; Lost fanout                                  ;
+; register_file:inst|registradores~1005    ; Lost fanout                                  ;
+; register_file:inst|registradores~1006    ; Lost fanout                                  ;
+; register_file:inst|registradores~1007    ; Lost fanout                                  ;
+; register_file:inst|registradores~1008    ; Lost fanout                                  ;
+; register_file:inst|registradores~1009    ; Lost fanout                                  ;
+; register_file:inst|registradores~1010    ; Lost fanout                                  ;
+; register_file:inst|registradores~1011    ; Lost fanout                                  ;
+; register_file:inst|registradores~1012    ; Lost fanout                                  ;
+; register_file:inst|registradores~1013    ; Lost fanout                                  ;
+; register_file:inst|registradores~1014    ; Lost fanout                                  ;
+; register_file:inst|registradores~1015    ; Lost fanout                                  ;
+; register_file:inst|registradores~1016    ; Lost fanout                                  ;
+; register_file:inst|registradores~1017    ; Lost fanout                                  ;
+; register_file:inst|registradores~1018    ; Lost fanout                                  ;
+; register_file:inst|registradores~1019    ; Lost fanout                                  ;
+; register_file:inst|registradores~1020    ; Lost fanout                                  ;
+; register_file:inst|registradores~1021    ; Lost fanout                                  ;
+; register_file:inst|registradores~1022    ; Lost fanout                                  ;
+; register_file:inst|registradores~1023    ; Lost fanout                                  ;
+; register_file:inst|registradores~1024    ; Lost fanout                                  ;
+; register_file:inst|registradores~1025    ; Lost fanout                                  ;
+; register_file:inst|registradores~1026    ; Lost fanout                                  ;
+; register_file:inst|registradores~1027    ; Lost fanout                                  ;
+; register_file:inst|registradores~1028    ; Lost fanout                                  ;
+; register_file:inst|registradores~1029    ; Lost fanout                                  ;
+; register_file:inst|registradores~1030    ; Lost fanout                                  ;
+; register_file:inst|registradores~1031    ; Lost fanout                                  ;
+; register_file:inst|registradores~1032    ; Lost fanout                                  ;
+; register_file:inst|registradores~1033    ; Lost fanout                                  ;
+; register_file:inst|registradores~1034    ; Lost fanout                                  ;
+; register_file:inst|registradores~1035    ; Lost fanout                                  ;
+; register_file:inst|registradores~1036    ; Lost fanout                                  ;
+; register_file:inst|registradores~1037    ; Lost fanout                                  ;
+; register_file:inst|registradores~1038    ; Lost fanout                                  ;
+; register_file:inst|registradores~1039    ; Lost fanout                                  ;
+; register_file:inst|registradores~1040    ; Lost fanout                                  ;
+; register_file:inst|registradores~1041    ; Lost fanout                                  ;
+; register_file:inst|registradores~1042    ; Lost fanout                                  ;
+; register_file:inst|registradores~1043    ; Lost fanout                                  ;
+; register_file:inst|registradores~1044    ; Lost fanout                                  ;
+; register_file:inst|registradores~1045    ; Lost fanout                                  ;
+; register_file:inst|registradores~1046    ; Lost fanout                                  ;
+; register_file:inst|registradores~1047    ; Lost fanout                                  ;
+; register_file:inst|registradores~1048    ; Lost fanout                                  ;
+; register_file:inst|registradores~1049    ; Lost fanout                                  ;
+; register_file:inst|registradores~1050    ; Lost fanout                                  ;
+; register_file:inst|registradores~1051    ; Lost fanout                                  ;
+; register_file:inst|registradores~1052    ; Lost fanout                                  ;
+; register_file:inst|registradores~1053    ; Lost fanout                                  ;
+; register_file:inst|registradores~1054    ; Lost fanout                                  ;
+; register_file:inst|registradores~1055    ; Lost fanout                                  ;
+; register_file:inst|registradores~1056    ; Lost fanout                                  ;
+; register_file:inst|registradores~1057    ; Lost fanout                                  ;
+; register_file:inst|registradores~1058    ; Lost fanout                                  ;
+; register_file:inst|registradores~1059    ; Lost fanout                                  ;
+; register_file:inst|registradores~1060    ; Lost fanout                                  ;
+; register_file:inst|registradores~1061    ; Lost fanout                                  ;
+; register_file:inst|registradores~101     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~133     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~165     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~325     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~357     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~389     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~100     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~132     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~164     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~324     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~356     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~388     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~99      ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~131     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~163     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~323     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~355     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~387     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~98      ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~130     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~162     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~322     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~354     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~386     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~97      ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~129     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~161     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~321     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~353     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~385     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~96      ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~128     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~160     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~320     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~352     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~384     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~95      ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~127     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~159     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~319     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~351     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~383     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~94      ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~126     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~158     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~318     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~350     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~382     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~93      ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~125     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~157     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~317     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~349     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~381     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~92      ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~124     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~156     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~316     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~348     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~380     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~91      ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~123     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~155     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~315     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~347     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~379     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~90      ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~122     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~154     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~314     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~346     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~378     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~89      ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~121     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~153     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~313     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~345     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~377     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~88      ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~120     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~152     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~312     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~344     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~376     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~87      ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~119     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~151     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~311     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~343     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~375     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~86      ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~118     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~150     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~310     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~342     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~374     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~85      ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~117     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~149     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~309     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~341     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~373     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~84      ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~116     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~148     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~308     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~340     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~372     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~83      ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~115     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~147     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~307     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~339     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~371     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~82      ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~114     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~146     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~306     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~338     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~370     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~81      ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~113     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~145     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~305     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~337     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~369     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~80      ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~112     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~144     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~304     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~336     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~368     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~79      ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~111     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~143     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~303     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~335     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~367     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~78      ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~110     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~142     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~302     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~334     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~366     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~77      ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~109     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~141     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~301     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~333     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~365     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~76      ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~108     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~140     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~300     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~332     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~364     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~75      ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~107     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~139     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~299     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~331     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~363     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~74      ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~106     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~138     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~298     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~330     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~362     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~73      ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~105     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~137     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~297     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~329     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~361     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~72      ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~104     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~136     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~296     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~328     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~360     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~71      ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~103     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~135     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~295     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~327     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~359     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~70      ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~102     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~134     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~294     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~326     ; Stuck at GND due to stuck port data_in       ;
+; register_file:inst|registradores~358     ; Stuck at GND due to stuck port data_in       ;
+; program_counter:inst19|PC_reg[10..31]    ; Lost fanout                                  ;
+; register_file:inst|registradores~69      ; Stuck at GND due to stuck port clock_enable  ;
+; register_file:inst|registradores~68      ; Stuck at GND due to stuck port clock_enable  ;
+; register_file:inst|registradores~67      ; Stuck at GND due to stuck port clock_enable  ;
+; register_file:inst|registradores~66      ; Stuck at GND due to stuck port clock_enable  ;
+; register_file:inst|registradores~65      ; Stuck at GND due to stuck port clock_enable  ;
+; register_file:inst|registradores~64      ; Stuck at GND due to stuck port clock_enable  ;
+; register_file:inst|registradores~63      ; Stuck at GND due to stuck port clock_enable  ;
+; register_file:inst|registradores~62      ; Stuck at GND due to stuck port clock_enable  ;
+; register_file:inst|registradores~61      ; Stuck at GND due to stuck port clock_enable  ;
+; register_file:inst|registradores~60      ; Stuck at GND due to stuck port clock_enable  ;
+; register_file:inst|registradores~59      ; Stuck at GND due to stuck port clock_enable  ;
+; register_file:inst|registradores~58      ; Stuck at GND due to stuck port clock_enable  ;
+; register_file:inst|registradores~57      ; Stuck at GND due to stuck port clock_enable  ;
+; register_file:inst|registradores~56      ; Stuck at GND due to stuck port clock_enable  ;
+; register_file:inst|registradores~55      ; Stuck at GND due to stuck port clock_enable  ;
+; register_file:inst|registradores~54      ; Stuck at GND due to stuck port clock_enable  ;
+; register_file:inst|registradores~53      ; Stuck at GND due to stuck port clock_enable  ;
+; register_file:inst|registradores~52      ; Stuck at GND due to stuck port clock_enable  ;
+; register_file:inst|registradores~51      ; Stuck at GND due to stuck port clock_enable  ;
+; register_file:inst|registradores~50      ; Stuck at GND due to stuck port clock_enable  ;
+; register_file:inst|registradores~49      ; Stuck at GND due to stuck port clock_enable  ;
+; register_file:inst|registradores~48      ; Stuck at GND due to stuck port clock_enable  ;
+; register_file:inst|registradores~47      ; Stuck at GND due to stuck port clock_enable  ;
+; register_file:inst|registradores~46      ; Stuck at GND due to stuck port clock_enable  ;
+; register_file:inst|registradores~45      ; Stuck at GND due to stuck port clock_enable  ;
+; register_file:inst|registradores~44      ; Stuck at GND due to stuck port clock_enable  ;
+; register_file:inst|registradores~43      ; Stuck at GND due to stuck port clock_enable  ;
+; register_file:inst|registradores~42      ; Stuck at GND due to stuck port clock_enable  ;
+; register_file:inst|registradores~41      ; Stuck at GND due to stuck port clock_enable  ;
+; register_file:inst|registradores~40      ; Stuck at GND due to stuck port clock_enable  ;
+; register_file:inst|registradores~39      ; Stuck at GND due to stuck port clock_enable  ;
+; register_file:inst|registradores~38      ; Stuck at GND due to stuck port clock_enable  ;
+; Total Number of Removed Registers = 1016 ;                                              ;
++------------------------------------------+----------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                               ;
++--------------------------------------+---------------------------+----------------------------------------+
+; Register name                        ; Reason for Removal        ; Registers Removed due to This Register ;
++--------------------------------------+---------------------------+----------------------------------------+
+; program_counter:inst19|PC_reg[0]     ; Stuck at GND              ; program_counter:inst19|PC_reg[24]      ;
+;                                      ; due to stuck port data_in ;                                        ;
+; register_file:inst|registradores~101 ; Stuck at GND              ; register_file:inst|registradores~69    ;
+;                                      ; due to stuck port data_in ;                                        ;
+; register_file:inst|registradores~100 ; Stuck at GND              ; register_file:inst|registradores~68    ;
+;                                      ; due to stuck port data_in ;                                        ;
+; register_file:inst|registradores~99  ; Stuck at GND              ; register_file:inst|registradores~67    ;
+;                                      ; due to stuck port data_in ;                                        ;
+; register_file:inst|registradores~98  ; Stuck at GND              ; register_file:inst|registradores~66    ;
+;                                      ; due to stuck port data_in ;                                        ;
+; register_file:inst|registradores~97  ; Stuck at GND              ; register_file:inst|registradores~65    ;
+;                                      ; due to stuck port data_in ;                                        ;
+; register_file:inst|registradores~96  ; Stuck at GND              ; register_file:inst|registradores~64    ;
+;                                      ; due to stuck port data_in ;                                        ;
+; register_file:inst|registradores~95  ; Stuck at GND              ; register_file:inst|registradores~63    ;
+;                                      ; due to stuck port data_in ;                                        ;
+; register_file:inst|registradores~94  ; Stuck at GND              ; register_file:inst|registradores~62    ;
+;                                      ; due to stuck port data_in ;                                        ;
+; register_file:inst|registradores~93  ; Stuck at GND              ; register_file:inst|registradores~61    ;
+;                                      ; due to stuck port data_in ;                                        ;
+; register_file:inst|registradores~92  ; Stuck at GND              ; register_file:inst|registradores~60    ;
+;                                      ; due to stuck port data_in ;                                        ;
+; register_file:inst|registradores~91  ; Stuck at GND              ; register_file:inst|registradores~59    ;
+;                                      ; due to stuck port data_in ;                                        ;
+; register_file:inst|registradores~90  ; Stuck at GND              ; register_file:inst|registradores~58    ;
+;                                      ; due to stuck port data_in ;                                        ;
+; register_file:inst|registradores~89  ; Stuck at GND              ; register_file:inst|registradores~57    ;
+;                                      ; due to stuck port data_in ;                                        ;
+; register_file:inst|registradores~88  ; Stuck at GND              ; register_file:inst|registradores~56    ;
+;                                      ; due to stuck port data_in ;                                        ;
+; register_file:inst|registradores~87  ; Stuck at GND              ; register_file:inst|registradores~55    ;
+;                                      ; due to stuck port data_in ;                                        ;
+; register_file:inst|registradores~86  ; Stuck at GND              ; register_file:inst|registradores~54    ;
+;                                      ; due to stuck port data_in ;                                        ;
+; register_file:inst|registradores~85  ; Stuck at GND              ; register_file:inst|registradores~53    ;
+;                                      ; due to stuck port data_in ;                                        ;
+; register_file:inst|registradores~84  ; Stuck at GND              ; register_file:inst|registradores~52    ;
+;                                      ; due to stuck port data_in ;                                        ;
+; register_file:inst|registradores~83  ; Stuck at GND              ; register_file:inst|registradores~51    ;
+;                                      ; due to stuck port data_in ;                                        ;
+; register_file:inst|registradores~82  ; Stuck at GND              ; register_file:inst|registradores~50    ;
+;                                      ; due to stuck port data_in ;                                        ;
+; register_file:inst|registradores~81  ; Stuck at GND              ; register_file:inst|registradores~49    ;
+;                                      ; due to stuck port data_in ;                                        ;
+; register_file:inst|registradores~80  ; Stuck at GND              ; register_file:inst|registradores~48    ;
+;                                      ; due to stuck port data_in ;                                        ;
+; register_file:inst|registradores~79  ; Stuck at GND              ; register_file:inst|registradores~47    ;
+;                                      ; due to stuck port data_in ;                                        ;
+; register_file:inst|registradores~78  ; Stuck at GND              ; register_file:inst|registradores~46    ;
+;                                      ; due to stuck port data_in ;                                        ;
+; register_file:inst|registradores~77  ; Stuck at GND              ; register_file:inst|registradores~45    ;
+;                                      ; due to stuck port data_in ;                                        ;
+; register_file:inst|registradores~76  ; Stuck at GND              ; register_file:inst|registradores~44    ;
+;                                      ; due to stuck port data_in ;                                        ;
+; register_file:inst|registradores~75  ; Stuck at GND              ; register_file:inst|registradores~43    ;
+;                                      ; due to stuck port data_in ;                                        ;
+; register_file:inst|registradores~74  ; Stuck at GND              ; register_file:inst|registradores~42    ;
+;                                      ; due to stuck port data_in ;                                        ;
+; register_file:inst|registradores~73  ; Stuck at GND              ; register_file:inst|registradores~41    ;
+;                                      ; due to stuck port data_in ;                                        ;
+; register_file:inst|registradores~72  ; Stuck at GND              ; register_file:inst|registradores~40    ;
+;                                      ; due to stuck port data_in ;                                        ;
+; register_file:inst|registradores~71  ; Stuck at GND              ; register_file:inst|registradores~39    ;
+;                                      ; due to stuck port data_in ;                                        ;
+; register_file:inst|registradores~70  ; Stuck at GND              ; register_file:inst|registradores~38    ;
+;                                      ; due to stuck port data_in ;                                        ;
++--------------------------------------+---------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 40    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 32    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                              ;
++-------------------------------------+------------------------------+------+
+; Register Name                       ; Megafunction                 ; Type ;
++-------------------------------------+------------------------------+------+
+; data_memory:inst34|addr_index[0..7] ; data_memory:inst34|mem_rtl_0 ; RAM  ;
++-------------------------------------+------------------------------+------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |MIPSGMN|ULA:inst4|Mux2    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Source assignments for data_memory:inst34|altsyncram:mem_rtl_0|altsyncram_fg81:auto_generated ;
++---------------------------------+--------------------+------+---------------------------------+
+; Assignment                      ; Value              ; From ; To                              ;
++---------------------------------+--------------------+------+---------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                               ;
++---------------------------------+--------------------+------+---------------------------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: data_memory:inst34|altsyncram:mem_rtl_0           ;
++------------------------------------+----------------------------------------------+----------------+
+; Parameter Name                     ; Value                                        ; Type           ;
++------------------------------------+----------------------------------------------+----------------+
+; BYTE_SIZE_BLOCK                    ; 8                                            ; Untyped        ;
+; AUTO_CARRY_CHAINS                  ; ON                                           ; AUTO_CARRY     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                          ; IGNORE_CARRY   ;
+; AUTO_CASCADE_CHAINS                ; ON                                           ; AUTO_CASCADE   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                          ; IGNORE_CASCADE ;
+; WIDTH_BYTEENA                      ; 1                                            ; Untyped        ;
+; OPERATION_MODE                     ; SINGLE_PORT                                  ; Untyped        ;
+; WIDTH_A                            ; 32                                           ; Untyped        ;
+; WIDTHAD_A                          ; 8                                            ; Untyped        ;
+; NUMWORDS_A                         ; 256                                          ; Untyped        ;
+; OUTDATA_REG_A                      ; UNREGISTERED                                 ; Untyped        ;
+; ADDRESS_ACLR_A                     ; NONE                                         ; Untyped        ;
+; OUTDATA_ACLR_A                     ; NONE                                         ; Untyped        ;
+; WRCONTROL_ACLR_A                   ; NONE                                         ; Untyped        ;
+; INDATA_ACLR_A                      ; NONE                                         ; Untyped        ;
+; BYTEENA_ACLR_A                     ; NONE                                         ; Untyped        ;
+; WIDTH_B                            ; 1                                            ; Untyped        ;
+; WIDTHAD_B                          ; 1                                            ; Untyped        ;
+; NUMWORDS_B                         ; 1                                            ; Untyped        ;
+; INDATA_REG_B                       ; CLOCK1                                       ; Untyped        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                       ; Untyped        ;
+; RDCONTROL_REG_B                    ; CLOCK1                                       ; Untyped        ;
+; ADDRESS_REG_B                      ; CLOCK1                                       ; Untyped        ;
+; OUTDATA_REG_B                      ; UNREGISTERED                                 ; Untyped        ;
+; BYTEENA_REG_B                      ; CLOCK1                                       ; Untyped        ;
+; INDATA_ACLR_B                      ; NONE                                         ; Untyped        ;
+; WRCONTROL_ACLR_B                   ; NONE                                         ; Untyped        ;
+; ADDRESS_ACLR_B                     ; NONE                                         ; Untyped        ;
+; OUTDATA_ACLR_B                     ; NONE                                         ; Untyped        ;
+; RDCONTROL_ACLR_B                   ; NONE                                         ; Untyped        ;
+; BYTEENA_ACLR_B                     ; NONE                                         ; Untyped        ;
+; WIDTH_BYTEENA_A                    ; 1                                            ; Untyped        ;
+; WIDTH_BYTEENA_B                    ; 1                                            ; Untyped        ;
+; RAM_BLOCK_TYPE                     ; AUTO                                         ; Untyped        ;
+; BYTE_SIZE                          ; 8                                            ; Untyped        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                    ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                         ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                         ; Untyped        ;
+; INIT_FILE                          ; db/MIPSGMN.ram0_data_memory_8ae84398.hdl.mif ; Untyped        ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                       ; Untyped        ;
+; MAXIMUM_DEPTH                      ; 0                                            ; Untyped        ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                       ; Untyped        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                       ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                       ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                       ; Untyped        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                              ; Untyped        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                              ; Untyped        ;
+; ENABLE_ECC                         ; FALSE                                        ; Untyped        ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                        ; Untyped        ;
+; WIDTH_ECCSTATUS                    ; 3                                            ; Untyped        ;
+; DEVICE_FAMILY                      ; Cyclone IV E                                 ; Untyped        ;
+; CBXI_PARAMETER                     ; altsyncram_fg81                              ; Untyped        ;
++------------------------------------+----------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                    ;
++-------------------------------------------+-----------------------------------------+
+; Name                                      ; Value                                   ;
++-------------------------------------------+-----------------------------------------+
+; Number of entity instances                ; 1                                       ;
+; Entity Instance                           ; data_memory:inst34|altsyncram:mem_rtl_0 ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                             ;
+;     -- WIDTH_A                            ; 32                                      ;
+;     -- NUMWORDS_A                         ; 256                                     ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                            ;
+;     -- WIDTH_B                            ; 1                                       ;
+;     -- NUMWORDS_B                         ; 1                                       ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                  ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                            ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                    ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                               ;
++-------------------------------------------+-----------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Wed Apr 23 00:11:15 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MIPSGMN -c MIPSGMN
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file control_unit.bdf
+    Info (12023): Found entity 1: control_unit
+Info (12021): Found 2 design units, including 1 entities, in source file ula.vhd
+    Info (12022): Found design unit 1: ULA-rtl
+    Info (12023): Found entity 1: ULA
+Info (12021): Found 2 design units, including 1 entities, in source file somador.vhd
+    Info (12022): Found design unit 1: somador-Behavioral
+    Info (12023): Found entity 1: somador
+Info (12021): Found 2 design units, including 1 entities, in source file sll2.vhd
+    Info (12022): Found design unit 1: sll2-rtl
+    Info (12023): Found entity 1: sll2
+Info (12021): Found 2 design units, including 1 entities, in source file sign_extend.vhd
+    Info (12022): Found design unit 1: sign_extend-Behavioral
+    Info (12023): Found entity 1: sign_extend
+Info (12021): Found 2 design units, including 1 entities, in source file register_file.vhd
+    Info (12022): Found design unit 1: register_file-rtl
+    Info (12023): Found entity 1: register_file
+Info (12021): Found 2 design units, including 1 entities, in source file program_counter.vhd
+    Info (12022): Found design unit 1: program_counter-Behavioral
+    Info (12023): Found entity 1: program_counter
+Info (12021): Found 2 design units, including 1 entities, in source file mux5.vhd
+    Info (12022): Found design unit 1: mux5-rtl
+    Info (12023): Found entity 1: mux5
+Info (12021): Found 2 design units, including 1 entities, in source file mux32.vhd
+    Info (12022): Found design unit 1: mux32-rtl
+    Info (12023): Found entity 1: mux32
+Info (12021): Found 2 design units, including 1 entities, in source file main_decoder.vhd
+    Info (12022): Found design unit 1: main_decoder-rtl
+    Info (12023): Found entity 1: main_decoder
+Info (12021): Found 2 design units, including 1 entities, in source file inst_memory.vhd
+    Info (12022): Found design unit 1: inst_memory-Behavioral
+    Info (12023): Found entity 1: inst_memory
+Info (12021): Found 2 design units, including 1 entities, in source file instruct_memory.vhd
+    Info (12022): Found design unit 1: instruction_memory-rtl
+    Info (12023): Found entity 1: instruction_memory
+Info (12021): Found 2 design units, including 1 entities, in source file data_memory.vhd
+    Info (12022): Found design unit 1: data_memory-Behavioral
+    Info (12023): Found entity 1: data_memory
+Info (12021): Found 2 design units, including 1 entities, in source file const4.vhd
+    Info (12022): Found design unit 1: const4-Behavioral
+    Info (12023): Found entity 1: const4
+Info (12021): Found 2 design units, including 1 entities, in source file alu_decoder.vhd
+    Info (12022): Found design unit 1: ALU_decoder-rtl
+    Info (12023): Found entity 1: ALU_decoder
+Info (12021): Found 1 design units, including 1 entities, in source file mipsgmn.bdf
+    Info (12023): Found entity 1: MIPSGMN
+Info (12021): Found 2 design units, including 1 entities, in source file sll2_j.vhd
+    Info (12022): Found design unit 1: sll2_j-rtl
+    Info (12023): Found entity 1: sll2_j
+Info (12021): Found 2 design units, including 1 entities, in source file concat_4_28.vhd
+    Info (12022): Found design unit 1: concat_4_28-rtl
+    Info (12023): Found entity 1: concat_4_28
+Info (12127): Elaborating entity "MIPSGMN" for the top level hierarchy
+Info (12128): Elaborating entity "control_unit" for hierarchy "control_unit:inst30"
+Info (12128): Elaborating entity "main_decoder" for hierarchy "control_unit:inst30|main_decoder:inst"
+Info (12128): Elaborating entity "ALU_decoder" for hierarchy "control_unit:inst30|ALU_decoder:inst2"
+Info (12128): Elaborating entity "inst_memory" for hierarchy "inst_memory:inst16"
+Warning (10492): VHDL Process Statement warning at inst_memory.vhd(71): signal "mem" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12128): Elaborating entity "program_counter" for hierarchy "program_counter:inst19"
+Info (12128): Elaborating entity "mux32" for hierarchy "mux32:inst7"
+Info (12128): Elaborating entity "ULA" for hierarchy "ULA:inst4"
+Warning (10492): VHDL Process Statement warning at ula.vhd(65): signal "A_int" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ula.vhd(65): signal "B_int" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ula.vhd(69): signal "A_int" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ula.vhd(69): signal "B_int" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ula.vhd(73): signal "A_int" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ula.vhd(73): signal "B_int" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ula.vhd(77): signal "A_int" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ula.vhd(77): signal "B_int" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ula.vhd(80): signal "A_int" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ula.vhd(80): signal "B_int" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ula.vhd(83): signal "A_int" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ula.vhd(83): signal "B_int" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ula.vhd(89): signal "A_int" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ula.vhd(89): signal "B_int" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ula.vhd(108): signal "Resultado_int" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12128): Elaborating entity "register_file" for hierarchy "register_file:inst"
+Info (12128): Elaborating entity "mux5" for hierarchy "mux5:inst1"
+Info (12128): Elaborating entity "data_memory" for hierarchy "data_memory:inst34"
+Info (12128): Elaborating entity "sign_extend" for hierarchy "sign_extend:inst5"
+Info (12128): Elaborating entity "somador" for hierarchy "somador:inst10"
+Warning (10492): VHDL Process Statement warning at somador.vhd(51): signal "A_int" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at somador.vhd(51): signal "B_int" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12128): Elaborating entity "const4" for hierarchy "const4:inst17"
+Info (12128): Elaborating entity "sll2" for hierarchy "sll2:inst23"
+Info (12128): Elaborating entity "concat_4_28" for hierarchy "concat_4_28:inst28"
+Info (12128): Elaborating entity "sll2_j" for hierarchy "sll2_j:inst9"
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276007): RAM logic "register_file:inst|registradores" is uninferred due to asynchronous read logic
+Info (19000): Inferred 1 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "data_memory:inst34|mem_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to SINGLE_PORT
+        Info (286033): Parameter WIDTH_A set to 32
+        Info (286033): Parameter WIDTHAD_A set to 8
+        Info (286033): Parameter NUMWORDS_A set to 256
+        Info (286033): Parameter OUTDATA_REG_A set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_A set to NONE
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter INIT_FILE set to db/MIPSGMN.ram0_data_memory_8ae84398.hdl.mif
+Info (12130): Elaborated megafunction instantiation "data_memory:inst34|altsyncram:mem_rtl_0"
+Info (12133): Instantiated megafunction "data_memory:inst34|altsyncram:mem_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "SINGLE_PORT"
+    Info (12134): Parameter "WIDTH_A" = "32"
+    Info (12134): Parameter "WIDTHAD_A" = "8"
+    Info (12134): Parameter "NUMWORDS_A" = "256"
+    Info (12134): Parameter "OUTDATA_REG_A" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "INIT_FILE" = "db/MIPSGMN.ram0_data_memory_8ae84398.hdl.mif"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_fg81.tdf
+    Info (12023): Found entity 1: altsyncram_fg81
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following RAM node(s):
+        Warning (14320): Synthesized away node "data_memory:inst34|altsyncram:mem_rtl_0|altsyncram_fg81:auto_generated|ram_block1a0"
+        Warning (14320): Synthesized away node "data_memory:inst34|altsyncram:mem_rtl_0|altsyncram_fg81:auto_generated|ram_block1a1"
+        Warning (14320): Synthesized away node "data_memory:inst34|altsyncram:mem_rtl_0|altsyncram_fg81:auto_generated|ram_block1a2"
+        Warning (14320): Synthesized away node "data_memory:inst34|altsyncram:mem_rtl_0|altsyncram_fg81:auto_generated|ram_block1a3"
+        Warning (14320): Synthesized away node "data_memory:inst34|altsyncram:mem_rtl_0|altsyncram_fg81:auto_generated|ram_block1a4"
+        Warning (14320): Synthesized away node "data_memory:inst34|altsyncram:mem_rtl_0|altsyncram_fg81:auto_generated|ram_block1a5"
+        Warning (14320): Synthesized away node "data_memory:inst34|altsyncram:mem_rtl_0|altsyncram_fg81:auto_generated|ram_block1a6"
+        Warning (14320): Synthesized away node "data_memory:inst34|altsyncram:mem_rtl_0|altsyncram_fg81:auto_generated|ram_block1a7"
+        Warning (14320): Synthesized away node "data_memory:inst34|altsyncram:mem_rtl_0|altsyncram_fg81:auto_generated|ram_block1a8"
+        Warning (14320): Synthesized away node "data_memory:inst34|altsyncram:mem_rtl_0|altsyncram_fg81:auto_generated|ram_block1a9"
+        Warning (14320): Synthesized away node "data_memory:inst34|altsyncram:mem_rtl_0|altsyncram_fg81:auto_generated|ram_block1a10"
+        Warning (14320): Synthesized away node "data_memory:inst34|altsyncram:mem_rtl_0|altsyncram_fg81:auto_generated|ram_block1a11"
+        Warning (14320): Synthesized away node "data_memory:inst34|altsyncram:mem_rtl_0|altsyncram_fg81:auto_generated|ram_block1a12"
+        Warning (14320): Synthesized away node "data_memory:inst34|altsyncram:mem_rtl_0|altsyncram_fg81:auto_generated|ram_block1a13"
+        Warning (14320): Synthesized away node "data_memory:inst34|altsyncram:mem_rtl_0|altsyncram_fg81:auto_generated|ram_block1a14"
+        Warning (14320): Synthesized away node "data_memory:inst34|altsyncram:mem_rtl_0|altsyncram_fg81:auto_generated|ram_block1a15"
+        Warning (14320): Synthesized away node "data_memory:inst34|altsyncram:mem_rtl_0|altsyncram_fg81:auto_generated|ram_block1a16"
+        Warning (14320): Synthesized away node "data_memory:inst34|altsyncram:mem_rtl_0|altsyncram_fg81:auto_generated|ram_block1a17"
+        Warning (14320): Synthesized away node "data_memory:inst34|altsyncram:mem_rtl_0|altsyncram_fg81:auto_generated|ram_block1a18"
+        Warning (14320): Synthesized away node "data_memory:inst34|altsyncram:mem_rtl_0|altsyncram_fg81:auto_generated|ram_block1a19"
+        Warning (14320): Synthesized away node "data_memory:inst34|altsyncram:mem_rtl_0|altsyncram_fg81:auto_generated|ram_block1a20"
+        Warning (14320): Synthesized away node "data_memory:inst34|altsyncram:mem_rtl_0|altsyncram_fg81:auto_generated|ram_block1a21"
+        Warning (14320): Synthesized away node "data_memory:inst34|altsyncram:mem_rtl_0|altsyncram_fg81:auto_generated|ram_block1a22"
+        Warning (14320): Synthesized away node "data_memory:inst34|altsyncram:mem_rtl_0|altsyncram_fg81:auto_generated|ram_block1a23"
+        Warning (14320): Synthesized away node "data_memory:inst34|altsyncram:mem_rtl_0|altsyncram_fg81:auto_generated|ram_block1a24"
+        Warning (14320): Synthesized away node "data_memory:inst34|altsyncram:mem_rtl_0|altsyncram_fg81:auto_generated|ram_block1a25"
+        Warning (14320): Synthesized away node "data_memory:inst34|altsyncram:mem_rtl_0|altsyncram_fg81:auto_generated|ram_block1a26"
+        Warning (14320): Synthesized away node "data_memory:inst34|altsyncram:mem_rtl_0|altsyncram_fg81:auto_generated|ram_block1a27"
+        Warning (14320): Synthesized away node "data_memory:inst34|altsyncram:mem_rtl_0|altsyncram_fg81:auto_generated|ram_block1a28"
+        Warning (14320): Synthesized away node "data_memory:inst34|altsyncram:mem_rtl_0|altsyncram_fg81:auto_generated|ram_block1a29"
+        Warning (14320): Synthesized away node "data_memory:inst34|altsyncram:mem_rtl_0|altsyncram_fg81:auto_generated|ram_block1a30"
+        Warning (14320): Synthesized away node "data_memory:inst34|altsyncram:mem_rtl_0|altsyncram_fg81:auto_generated|ram_block1a31"
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "memwrt" is stuck at GND
+    Warning (13410): Pin "memtor" is stuck at GND
+    Warning (13410): Pin "regData1[31]" is stuck at GND
+    Warning (13410): Pin "regData1[30]" is stuck at GND
+    Warning (13410): Pin "regData1[29]" is stuck at GND
+    Warning (13410): Pin "regData1[28]" is stuck at GND
+    Warning (13410): Pin "regData1[27]" is stuck at GND
+    Warning (13410): Pin "regData1[26]" is stuck at GND
+    Warning (13410): Pin "regData1[25]" is stuck at GND
+    Warning (13410): Pin "regData1[24]" is stuck at GND
+    Warning (13410): Pin "regData1[23]" is stuck at GND
+    Warning (13410): Pin "regData1[22]" is stuck at GND
+    Warning (13410): Pin "regData1[21]" is stuck at GND
+    Warning (13410): Pin "regData1[20]" is stuck at GND
+    Warning (13410): Pin "regData1[19]" is stuck at GND
+    Warning (13410): Pin "regData1[18]" is stuck at GND
+    Warning (13410): Pin "regData1[17]" is stuck at GND
+    Warning (13410): Pin "regData1[16]" is stuck at GND
+    Warning (13410): Pin "regData1[15]" is stuck at GND
+    Warning (13410): Pin "regData1[14]" is stuck at GND
+    Warning (13410): Pin "regData1[13]" is stuck at GND
+    Warning (13410): Pin "regData1[12]" is stuck at GND
+    Warning (13410): Pin "regData1[11]" is stuck at GND
+    Warning (13410): Pin "regData1[10]" is stuck at GND
+    Warning (13410): Pin "regData1[9]" is stuck at GND
+    Warning (13410): Pin "regData1[8]" is stuck at GND
+    Warning (13410): Pin "regData1[7]" is stuck at GND
+    Warning (13410): Pin "regData1[6]" is stuck at GND
+    Warning (13410): Pin "regData1[5]" is stuck at GND
+    Warning (13410): Pin "regData1[4]" is stuck at GND
+    Warning (13410): Pin "regData1[3]" is stuck at GND
+    Warning (13410): Pin "regData1[2]" is stuck at GND
+    Warning (13410): Pin "regData1[1]" is stuck at GND
+    Warning (13410): Pin "regData1[0]" is stuck at GND
+    Warning (13410): Pin "sign_extend[31]" is stuck at GND
+    Warning (13410): Pin "sign_extend[30]" is stuck at GND
+    Warning (13410): Pin "sign_extend[29]" is stuck at GND
+    Warning (13410): Pin "sign_extend[28]" is stuck at GND
+    Warning (13410): Pin "sign_extend[27]" is stuck at GND
+    Warning (13410): Pin "sign_extend[26]" is stuck at GND
+    Warning (13410): Pin "sign_extend[25]" is stuck at GND
+    Warning (13410): Pin "sign_extend[24]" is stuck at GND
+    Warning (13410): Pin "sign_extend[23]" is stuck at GND
+    Warning (13410): Pin "sign_extend[22]" is stuck at GND
+    Warning (13410): Pin "sign_extend[21]" is stuck at GND
+    Warning (13410): Pin "sign_extend[20]" is stuck at GND
+    Warning (13410): Pin "sign_extend[19]" is stuck at GND
+    Warning (13410): Pin "sign_extend[18]" is stuck at GND
+    Warning (13410): Pin "sign_extend[17]" is stuck at GND
+    Warning (13410): Pin "sign_extend[16]" is stuck at GND
+    Warning (13410): Pin "sign_extend[15]" is stuck at GND
+    Warning (13410): Pin "sign_extend[14]" is stuck at GND
+    Warning (13410): Pin "sign_extend[13]" is stuck at GND
+    Warning (13410): Pin "sign_extend[12]" is stuck at GND
+    Warning (13410): Pin "sign_extend[11]" is stuck at GND
+    Warning (13410): Pin "sign_extend[10]" is stuck at GND
+    Warning (13410): Pin "sign_extend[9]" is stuck at GND
+    Warning (13410): Pin "sign_extend[8]" is stuck at GND
+    Warning (13410): Pin "sign_extend[7]" is stuck at GND
+    Warning (13410): Pin "sign_extend[6]" is stuck at GND
+    Warning (13410): Pin "sign_extend[4]" is stuck at GND
+    Warning (13410): Pin "sign_extend[2]" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 790 registers lost all their fanouts during netlist optimizations.
+Info (17016): Found the following redundant logic cells in design
+    Info (17048): Logic cell "ULA:inst4|Add0~0"
+    Info (17048): Logic cell "ULA:inst4|Add0~3"
+    Info (17048): Logic cell "ULA:inst4|Add0~6"
+    Info (17048): Logic cell "ULA:inst4|Add0~9"
+    Info (17048): Logic cell "ULA:inst4|Add0~12"
+    Info (17048): Logic cell "ULA:inst4|Add0~15"
+    Info (17048): Logic cell "ULA:inst4|Add0~18"
+    Info (17048): Logic cell "ULA:inst4|Add0~21"
+    Info (17048): Logic cell "ULA:inst4|Add0~24"
+    Info (17048): Logic cell "ULA:inst4|Add0~27"
+    Info (17048): Logic cell "ULA:inst4|Add0~30"
+    Info (17048): Logic cell "ULA:inst4|Add0~33"
+    Info (17048): Logic cell "ULA:inst4|Add0~36"
+    Info (17048): Logic cell "ULA:inst4|Add0~39"
+    Info (17048): Logic cell "ULA:inst4|Add0~42"
+    Info (17048): Logic cell "ULA:inst4|Add0~45"
+    Info (17048): Logic cell "ULA:inst4|Add0~48"
+    Info (17048): Logic cell "ULA:inst4|Add0~51"
+    Info (17048): Logic cell "ULA:inst4|Add0~54"
+    Info (17048): Logic cell "ULA:inst4|Add0~57"
+    Info (17048): Logic cell "ULA:inst4|Add0~60"
+    Info (17048): Logic cell "ULA:inst4|Add0~63"
+    Info (17048): Logic cell "ULA:inst4|Add0~66"
+    Info (17048): Logic cell "ULA:inst4|Add0~69"
+    Info (17048): Logic cell "ULA:inst4|Add0~72"
+    Info (17048): Logic cell "ULA:inst4|Add0~75"
+    Info (17048): Logic cell "ULA:inst4|Add0~78"
+    Info (17048): Logic cell "ULA:inst4|Add0~81"
+    Info (17048): Logic cell "ULA:inst4|Add0~84"
+    Info (17048): Logic cell "ULA:inst4|Add0~87"
+    Info (17048): Logic cell "ULA:inst4|Add0~90"
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 374 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 1 input pins
+    Info (21059): Implemented 162 output pins
+    Info (21061): Implemented 211 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 116 warnings
+    Info: Peak virtual memory: 4650 megabytes
+    Info: Processing ended: Wed Apr 23 00:11:18 2025
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
+
+

@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="MIPSGMN">
+		<CBX_INST_ENTRY INSTANCE_NAME="|MIPSGMN|data_memory:inst34|altsyncram:mem_rtl_0" CBX_FILE_NAME="altsyncram_fg81.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

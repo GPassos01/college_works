@@ -1,0 +1,61 @@
+-- ==========================================
+-- Módulo: data_memory (Memória de Dados)
+-- Descrição: 
+--   A memória de dados tem um único porto de leitura/escrita. 
+--   Se o enable de escrita (WE) estiver a 1, escreve os dados (WD) no endereço (A) 
+--   no flanco ascendente do relógio (clk). Caso contrário, ela lê o dado correspondente
+--   ao endereço A e coloca o valor na saída RD.
+-- 
+-- Interface:
+--   - Entradas:
+--       A              : Endereço de 32 bits para leitura ou escrita.
+--       WD             : Dados de 32 bits a serem escritos.
+--       clk            : Sinal de clock.
+--       WE             : Sinal de enable de escrita. Se 1, escreve os dados.
+-- 
+--   - Saídas:
+--       RD             : Dados de 32 bits lidos da memória no endereço especificado por A.
+
+-- ==========================================
+
+library ieee;
+use IEEE.STD_logic_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity data_memory is
+    port (
+        clk     : in  std_logic;                        		-- Sinal de clock
+        A       : in  std_logic_vector(31 downto 0);     	-- Endereço de 32 bits
+        WE      : in  std_logic;                       	 	-- Enable de escrita (0: leitura, 1: escrita)
+        WD      : in  std_logic_vector(31 downto 0);     	-- Dados de 32 bits a serem escritos
+        RD      : out std_logic_vector(31 downto 0)      	-- Dados lidos da memória
+    );
+end data_memory;
+
+architecture Behavioral of data_memory is
+    -- Declaração de memória: 256 palavras de 32 bits
+    type mem_array is array (0 to 255) of std_logic_vector(31 downto 0);
+    signal mem : mem_array := (others => (others => '0'));  -- Inicialização com zeros
+begin
+
+    -- Processo sensível ao clock e ao endereço
+    process(clk)
+        -- Variáveis internas
+        variable index : natural range 0 to 255; -- Índice calculado para acessar a memória
+    begin
+        -- No flanco de subida do clock
+        if rising_edge(clk) then
+            -- Calcular o índice de memória com base nos 8 bits mais baixos do endereço
+            index := to_integer(unsigned(A(9 downto 2)));  -- A(9 downto 2) fornece 8 bits para o índice
+
+            if WE = '1' then
+                -- Se WE for 1, escrevemos na memória
+                mem(index) <= WD;
+            else
+                -- Caso contrário, lemos da memória e colocamos em RD
+                RD <= mem(index);
+            end if;
+        end if;
+    end process;
+
+end Behavioral;
