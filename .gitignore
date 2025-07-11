@@ -1,0 +1,5 @@
+*.elf
+*.s.o
+*.srec
+nios_macros.s
+projeto_micro.ncf
