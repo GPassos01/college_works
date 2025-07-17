@@ -1,7 +1,8 @@
 # 🎓 Projetos da Graduação - Ciência da Computação UNESP
 
 **Repositório unificado dos trabalhos e projetos desenvolvidos durante a graduação em Ciência da Computação na UNESP - Campus Rio Claro**
-Obs: Coloquei aqui apenas os projetos que geraram entregáveis julgados, por mim, suficientes para postagem. Demais projetos e varios exercicios ficaram de fora, assim como a maioria das disciplinas estudadas na graduação que não tiveram projetos ou seus códigos fonte/documentação apenas se perdeu pelo caminho. 
+
+*Obs:* Coloquei aqui apenas os projetos que geraram entregáveis julgados, por mim, suficientes para postagem. Demais projetos e varios exercicios ficaram de fora, assim como a maioria das disciplinas estudadas na graduação que não tiveram projetos ou seus códigos fonte/documentação apenas se perdeu pelo caminho. 
 
 ---
 
