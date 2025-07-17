@@ -1,6 +1,7 @@
 # 🎓 Projetos da Graduação - Ciência da Computação UNESP
 
 **Repositório unificado dos trabalhos e projetos desenvolvidos durante a graduação em Ciência da Computação na UNESP - Campus Rio Claro**
+Obs: Coloquei aqui apenas os projetos que geraram entregáveis julgados, por mim, suficientes para postagem. Demais projetos e varios exercicios ficaram de fora, assim como a maioria das disciplinas estudadas na graduação que não tiveram projetos ou seus códigos fonte/documentação apenas se perdeu pelo caminho. 
 
 ---
 
@@ -116,9 +117,20 @@ Implementação de **estruturas de dados complexas** focadas em manipulação ef
 
 ## 🖥️ 5º-6º Semestre (2023) - Sistemas
 
-> **Foco:** Banco de Dados
+> **Foco:** Manipulação de Dados
 
-*Período sera atualizado em breve...*
+### [`BD1/`](./5-6-semestre(2023)/BD1) - Banco de Dados mySQL
+**Disciplina:** Banco de Dados I
+
+Implementação de **banco de dados** focadas em criação e consultas eficientes de tabelas em banco de dados relacional
+
+**📋 Habilidades Aplicadas:**
+- Criação e deleção de tabelas e seus possiveis impactos
+- Chaves primarias, secundarias e extrangeiras
+- Consultas com joins de tabelas
+- Criação de diagramas com boas praticas para eliminação de redundâncias
+
+**🛠️ Tecnologias:** `mySQL`, `SQL`, `Banco de Dados Relacional`, `UML`, `Diagrama de Entidade-Relacionamento(DER)`
 
 ---
 
