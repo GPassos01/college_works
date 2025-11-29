@@ -294,6 +294,35 @@ Sistema **completo de tecnologia assistiva** combinando IoT, Bluetooth Low Energ
 **🤝 Colaboração:**  
 - [amandarreis](https://github.com/amandarreis)
 
+### [`machine-learning/`](./9-10semestre-2025/machine-learning) - Previsão de Preços de Criptomoeda
+**Disciplina:** Mineração de Dados e Aprendizado de Máquina
+
+Projeto de **análise preditiva** aplicando técnicas de Machine Learning e séries temporais para prever o preço do Bitcoin em curto prazo.
+
+**📊 Modelos Implementados:**
+- **Regressão Linear** - Baseline estatístico clássico
+- **ARIMA (5,1,0)** - Modelo especializado em séries temporais
+- **LSTM Otimizado** - Rede neural recorrente com memória longa
+
+**🔬 Pipeline Completo:**
+- Coleta de dados via yfinance (2017-2024)
+- Engenharia de Features (SMA_20, EMA_10, Pct_Change)
+- Normalização com MinMaxScaler
+- Janelas temporais de 60 dias para LSTM
+- Validação temporal com grid search
+- Métricas: MAE, RMSE, MAPE
+
+**📈 Otimizações:**
+- Grid Search para hiperparâmetros do LSTM
+- Validação temporal para evitar data leakage
+- Comparação experimental entre modelos
+- Visualizações interativas de performance
+
+**🛠️ Tecnologias:** `Python`, `TensorFlow/Keras`, `Scikit-learn`, `Statsmodels`, `yfinance`, `Pandas`, `NumPy`, `Matplotlib`, `Seaborn`
+
+**🤝 Colaboração:**  
+- [hiraleticia](https://github.com/hiraleticia)
+
 
 ---
 
@@ -336,10 +365,11 @@ Sistema **completo de tecnologia assistiva** combinando IoT, Bluetooth Low Energ
 **Campus Rio Claro - IGCE**  
 **Período:** 2021-2025
 
-### **💡 Áreas de Especialização**
+### **💡 Áreas de Especialização Trabalhadas**
 - **Sistemas Embarcados** e Arquitetura de Computadores
 - **Tecnologias Assistivas** e Acessibilidade Digital  
 - **Inteligência Artificial** e Algoritmos de Busca
+- **Machine Learning** e Análise Preditiva de Séries Temporais
 - **Desenvolvimento Full-Stack** (Java/Spring + Frontend)
 - **Internet das Coisas (IoT)** e Computação Pervasiva
 - **Programação Paralela** e Otimização de Performance
